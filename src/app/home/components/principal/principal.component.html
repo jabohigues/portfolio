@@ -1,4 +1,23 @@
-<app-header (clickMenuPater)="openMenu()"></app-header>
+<mat-drawer-container class="container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over" class="drawer">
+    <nav>
+      <ul>
+        <li><a>Inicio</a></li>
+        <li><a>Sobre mi</a></li>
+        <li><a>Habilidades</a></li>
+        <li><a>Herramientas</a></li>
+        <li><a>Proyectos</a></li>
+        <li><a>Contáctame</a></li>
+      </ul>
+    </nav>
+    <img src="/assets/images/logo.webp" alt="logo" />
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (click)="drawer.toggle()"></app-header>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<!-- <main (scroll)="changeNav($event)"> -->
 <main>
   <section>
     <article>
@@ -7,21 +26,3 @@
     </article>
   </section>
 </main>
-
-<mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-  <mat-sidenav-container>
-    <mat-sidenav-content>
-      <nav>
-        <ul>
-          <li><a>Inicio</a></li>
-          <li><a>Sobre mi</a></li>
-          <li><a>Habilidades</a></li>
-          <li><a>Herramientas</a></li>
-          <li><a>Proyectos</a></li>
-          <li><a>Contáctame</a></li>
-        </ul>
-      </nav>
-      <img src="/assets/images/logo.webp" alt="logo" />
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</mat-sidenav>

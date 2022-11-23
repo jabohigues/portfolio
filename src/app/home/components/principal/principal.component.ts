@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -14,7 +14,17 @@ export class PrincipalComponent implements OnInit {
 
   constructor(private observer: BreakpointObserver) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // $(function () {
+    //   $(window).on('scroll', function () {
+    //     if ($(window).scrollTop() > 100) {
+    //       $('.navscroll').addClass('azul');
+    //     } else {
+    //       $('.navscroll').removeClass('azul');
+    //     }
+    //   });
+    // });
+  }
   openMenu() {
     if (this.menuOpen) {
       this.sidenav.mode = 'over';
@@ -26,4 +36,10 @@ export class PrincipalComponent implements OnInit {
       this.menuOpen = true;
     }
   }
+
+  // @HostListener("scroll", ['$event'])
+  // changeNav($event:Event){
+  //   let scrollOffset = $event.srcElement['scrollTop'];
+  //   console.log("scroll: ", scrollOffset);
+  // }}
 }
