@@ -1,9 +1,9 @@
 p {
-  font-size: 5vw;
+  border: 2px pink solid;
+  font-size: 8vw;
   color: var(--white);
-  line-height: 6vw;
-  // font-family: cursive;
-  font-family: fantasy;
-  letter-spacing: 0.1vw;
-  word-spacing: 0.5vw;
+  line-height: 12vw;
+  font-family: fantasy, Roboto;
+  height: 40vw;
+  width: 75vw;
 }

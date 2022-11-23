@@ -5,6 +5,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,13 @@ import { MainComponent } from './components/main/main.component';
     FooterComponent,
     MainComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatToolbarModule,
+    LayoutModule,
+  ],
   exports: [
     LogoComponent,
     HeaderComponent,

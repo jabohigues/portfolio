@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,11 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
+  @Output() clickMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   navigate(ruta: string) {
     this.router.navigate([ruta]);
+  }
+
+  passClickMenu() {
+    this.clickMenu.emit(true);
   }
 }

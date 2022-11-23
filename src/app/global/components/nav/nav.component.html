@@ -1,7 +1,4 @@
-<nav class="menu">
-  <ul>
-    <li class="about" (click)="navigate('/about')"><a>S</a></li>
-    <li class="proyect" (click)="navigate('/proyect')"><a>P</a></li>
-    <li class="contact" (click)="navigate('/contact')"><a>C</a></li>
-  </ul>
-</nav>
+<mat-toolbar class="toolbar">
+  <img src="/assets/images/logo.webp" alt="logo" />
+  <mat-icon class="iconMenu" (click)="passClickMenu()">menu</mat-icon>
+</mat-toolbar>

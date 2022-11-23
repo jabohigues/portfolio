@@ -7,12 +7,6 @@ import { NgxTypedJsComponent } from 'ngx-typed-js';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  parrafo1: string = '¡Hola!';
-  parrafo2: string = 'Soy Juan,';
-  parrafo3: string = 'Desarrollador Web';
-  i: number = 0;
-  msg: string = '¡Hola!\nSoy Juan,\nDesarrollador Web';
-  velocidad: number = 2;
   @ViewChild(NgxTypedJsComponent) typed!: NgxTypedJsComponent;
 
   constructor() {}

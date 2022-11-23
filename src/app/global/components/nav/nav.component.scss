@@ -1,49 +1,18 @@
-@font-face {
-  font-family: "Nerko_One";
-  src: url("/assets/typography/Nerko_One/NerkoOne-Regular.ttf")
-    format("truetype");
-  font-style: normal;
-  font-weight: normal;
+img {
+  width: 10vw;
 }
 
-.menu {
-  position: fixed;
-  left: 1vw;
-  top: 12vw;
-  ul {
-    list-style: none;
-    li {
-      margin: 5vw 0;
-      a {
-        text-decoration: none;
-        font-size: 8vw;
-        color: var(--green);
-        font-family: fantasy;
-      }
-      &:hover {
-        a {
-          color: var(--red);
-        }
-        a::after {
-          font-size: 3vw;
-          color: var(--white);
-        }
-      }
-      &.about:hover {
-        a::after {
-          content: "obre mí";
-        }
-      }
-      &.proyect:hover {
-        a::after {
-          content: "royectos";
-        }
-      }
-      &.contact:hover {
-        a::after {
-          content: "ontacto";
-        }
-      }
-    }
-  }
+.toolbar {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 12vw;
+}
+
+.iconMenu {
+  color: white;
+  font-size: 8vw;
+  width: 8vw;
+  height: fit-content;
 }

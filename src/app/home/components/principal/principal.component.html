@@ -1,7 +1,27 @@
-<app-header></app-header>
-<app-nav></app-nav>
+<app-header (clickMenuPater)="openMenu()"></app-header>
 <main>
   <section>
-    <app-welcome></app-welcome>
+    <article>
+      <app-welcome></app-welcome>
+      <img src="/assets/images/emoji.webp" alt="Bienvenidos" />
+    </article>
   </section>
 </main>
+
+<mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+      <nav>
+        <ul>
+          <li><a>Inicio</a></li>
+          <li><a>Sobre mi</a></li>
+          <li><a>Habilidades</a></li>
+          <li><a>Herramientas</a></li>
+          <li><a>Proyectos</a></li>
+          <li><a>Contáctame</a></li>
+        </ul>
+      </nav>
+      <img src="/assets/images/logo.webp" alt="logo" />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</mat-sidenav>
