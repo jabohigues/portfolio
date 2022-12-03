@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgxTypedJsComponent } from 'ngx-typed-js';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -7,8 +6,6 @@ import { NgxTypedJsComponent } from 'ngx-typed-js';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  @ViewChild(NgxTypedJsComponent) typed!: NgxTypedJsComponent;
-
   constructor() {}
 
   ngOnInit(): void {}

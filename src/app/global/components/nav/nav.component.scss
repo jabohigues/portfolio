@@ -1,19 +1,18 @@
-img {
-  width: 10vw;
-}
-
 .toolbar {
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 12vw;
-  padding: 0 15vw;
-}
 
-.iconMenu {
-  color: white;
-  font-size: 8vw;
-  width: 8vw;
-  height: fit-content;
+  img {
+    width: 10vw;
+  }
+
+  .iconMenu {
+    color: white;
+    font-size: 8vw;
+    width: 8vw;
+    height: fit-content;
+  }
 }

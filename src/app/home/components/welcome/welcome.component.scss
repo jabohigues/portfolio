@@ -1,8 +1,51 @@
+div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10vw auto;
+}
 p {
   font-size: 8vw;
   color: var(--white);
-  line-height: 12vw;
-  font-family: fantasy, Roboto;
-  height: 40vw;
-  width: 75vw;
+  display: block;
+  font-family: fantasy, Roboto monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  overflow: hidden;
+  width: 15.5ch;
+  padding: 0;
+  margin: 0;
+
+  &.first {
+    width: 6ch;
+    animation: typing 1.5s steps(15), blink 0.5s infinite step-end alternate;
+  }
+
+  &.second {
+    width: 7ch;
+    animation: typing 1.5s steps(15) 1.5s,
+      blink 0.5s infinite step-end alternate;
+  }
+
+  &.third {
+    width: 15.5ch;
+    animation: typing 2s steps(20) 3s, blink 0.5s infinite step-end alternate;
+  }
+  & .name {
+    color: var(--red);
+  }
+  & .job {
+    color: var(--green);
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }

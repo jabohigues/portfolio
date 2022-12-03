@@ -1,5 +1,14 @@
-// header {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10vw;
+  max-width: 80vw;
+}
+
+.navScroll {
+  background-color: var(--yellow);
+  color: black;
+  z-index: 5;
+}

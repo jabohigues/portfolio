@@ -1,6 +1,9 @@
-<mat-drawer-container class="container" hasBackdrop="true">
-  <mat-drawer #drawer mode="over" class="drawer">
-    <nav>
+<app-header></app-header>
+
+<main>
+  <div id="divBack" (click)="toggleMenu()"></div>
+  <nav id="nav" class="normal notactive">
+    <div class="navContent">
       <ul>
         <li><a>Inicio</a></li>
         <li><a>Sobre mi</a></li>
@@ -9,20 +12,18 @@
         <li><a>Proyectos</a></li>
         <li><a>Contáctame</a></li>
       </ul>
-    </nav>
-    <img src="/assets/images/logo.webp" alt="logo" />
-  </mat-drawer>
-  <mat-drawer-content>
-    <app-header (click)="drawer.toggle()"></app-header>
-  </mat-drawer-content>
-</mat-drawer-container>
-
-<!-- <main (scroll)="changeNav($event)"> -->
-<main>
+      <img src="/assets/images/logo.webp" alt="logo" />
+    </div>
+  </nav>
   <section>
     <article>
       <app-welcome></app-welcome>
       <img src="/assets/images/emoji.webp" alt="Bienvenidos" />
+    </article>
+  </section>
+  <section>
+    <article>
+      <app-principal-about></app-principal-about>
     </article>
   </section>
 </main>

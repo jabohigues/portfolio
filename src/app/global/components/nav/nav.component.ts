@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +13,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  @Output() clickMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
-
+  currentPosition = window.scrollY;
+  @HostListener('window:scroll', ['$event.target']) // for window scroll events
+  scroll(e: any) {
+    let scroll = e.scrollingElement.scrollTop;
+    let toolbar = document.getElementById('toolbarNav');
+    if (scroll >= 30) {
+      toolbar!.classList.add('navScroll');
+    } else {
+      toolbar!.classList.remove('navScroll');
+    }
+  }
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
@@ -17,7 +32,14 @@ export class NavComponent implements OnInit {
     this.router.navigate([ruta]);
   }
 
-  passClickMenu() {
-    this.clickMenu.emit(true);
+  toggleMenu() {
+    let divBack = document.getElementById('divBack');
+    divBack?.classList.toggle('active');
+    let nav = document.getElementById('nav');
+    nav?.classList.toggle('active');
+    nav?.classList.toggle('notactive');
+    setTimeout(() => {
+      nav?.classList.toggle('normal');
+    }, 200);
   }
 }
