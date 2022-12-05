@@ -1,0 +1,16 @@
+.details {
+  font-size: 4vw;
+  margin-top: 8vw;
+
+  & > p {
+    margin: 1vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 5vw;
+      margin-right: 2vw;
+    }
+  }
+}

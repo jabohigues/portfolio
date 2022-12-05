@@ -1,0 +1,18 @@
+<div>
+  <h1>Habilidades</h1>
+
+  <div id="habilities">
+    <mat-card class="card" *ngFor="let habilitie of habilities">
+      <img
+        mat-card-image
+        src="/assets/images/habilities/{{ habilitie.img }}.svg"
+        alt="{{ habilitie.title }}"
+      />
+      <mat-card-content>
+        <p>
+          {{ habilitie.title }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -8,7 +8,6 @@ import { MainComponent } from './components/main/main.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -18,13 +17,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     FooterComponent,
     MainComponent,
   ],
-  imports: [
-    CommonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatToolbarModule,
-    LayoutModule,
-  ],
+  imports: [CommonModule, MatSidenavModule, MatIconModule, MatToolbarModule],
   exports: [
     LogoComponent,
     HeaderComponent,

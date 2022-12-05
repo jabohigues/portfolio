@@ -5,9 +5,16 @@ import { GlobalModule } from '../global/global.module';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AboutModule } from '../about/about.module';
+import { HabilitiesModule } from '../habilities/habilities.module';
 
 @NgModule({
   declarations: [PrincipalComponent, WelcomeComponent],
-  imports: [CommonModule, GlobalModule, MatIconModule, AboutModule],
+  imports: [
+    CommonModule,
+    GlobalModule,
+    MatIconModule,
+    AboutModule,
+    HabilitiesModule,
+  ],
 })
 export class HomeModule {}
