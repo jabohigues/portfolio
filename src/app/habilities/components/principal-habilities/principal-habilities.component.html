@@ -3,11 +3,14 @@
 
   <div id="habilities">
     <mat-card class="card" *ngFor="let habilitie of habilities">
-      <img
-        mat-card-image
-        src="/assets/images/habilities/{{ habilitie.img }}.svg"
-        alt="{{ habilitie.title }}"
-      />
+      <div class="imageCard">
+        <img
+          mat-card-image
+          src="/assets/images/habilities/{{ habilitie.img }}.svg"
+          alt="{{ habilitie.title }}"
+        />
+      </div>
+
       <mat-card-content>
         <p>
           {{ habilitie.title }}

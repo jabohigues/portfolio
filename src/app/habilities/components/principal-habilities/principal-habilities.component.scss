@@ -13,13 +13,24 @@ div {
 
 #habilities {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1vw;
 
+  .imageCard {
+    width: 15vw;
+    height: 20vw;
+  }
+
   img {
-    width: 10vw;
+    width: 15vw;
     margin: 0;
     margin-bottom: 1vw;
+  }
+  .jQuery {
+    // margin-left: 20vw;
+    img {
+      // width: 50vw;
+    }
   }
 }
 
@@ -29,6 +40,8 @@ mat-card {
   align-items: center;
   flex-direction: column;
   background-color: transparent;
-  border: 2px var(--yellow) solid;
+  box-shadow: none !important;
   color: var(--white);
+  width: 15vw;
+  height: 25vw;
 }
