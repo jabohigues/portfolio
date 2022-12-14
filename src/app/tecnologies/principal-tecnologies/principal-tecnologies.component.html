@@ -1,0 +1,21 @@
+<div id="divTecnologies">
+  <h1>Tecnologías</h1>
+
+  <div id="tecnologies">
+    <mat-card class="card" *ngFor="let tecnologie of tecnologies">
+      <div class="imageCard">
+        <img
+          mat-card-image
+          src="/assets/images/tecnologies/{{ tecnologie.img }}.svg"
+          alt="{{ tecnologie.title }}"
+        />
+      </div>
+
+      <mat-card-content>
+        <p>
+          {{ tecnologie.title }}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
