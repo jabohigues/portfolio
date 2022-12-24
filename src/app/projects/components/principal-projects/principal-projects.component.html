@@ -1,0 +1,41 @@
+<div id="divProjects">
+  <h1>Proyectos</h1>
+
+  <div id="projects">
+    <mat-card class="card" *ngFor="let project of projects">
+      <div class="imageCard">
+        <img
+          mat-card-image
+          src="/assets/images/projects/{{ project.folder }}/{{
+            project.img
+          }}.webp"
+          alt="{{ project.title }}"
+        />
+      </div>
+
+      <mat-card-content>
+        <div class="header">
+          <h2>{{ project.title }}</h2>
+          <mat-chip>{{ project.category }}</mat-chip>
+        </div>
+        <p>
+          {{ project.description }}
+        </p>
+        <p>
+          {{ project.caller }}
+        </p>
+        <hr />
+        <p class="tags">
+          <img
+            *ngFor="let image of project.tags"
+            src="/assets/images/habilities/{{ image }}.svg"
+            alt=""
+          />
+        </p>
+        <p class="actions">
+          <a href="">GitHub</a>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

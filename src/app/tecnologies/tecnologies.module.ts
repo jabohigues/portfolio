@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrincipalTecnologiesComponent } from './principal-tecnologies/principal-tecnologies.component';
+import { PrincipalTecnologiesComponent } from './components/principal-tecnologies/principal-tecnologies.component';
 import { MatCardModule } from '@angular/material/card';
 
 @NgModule({

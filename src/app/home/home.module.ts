@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AboutModule } from '../about/about.module';
 import { HabilitiesModule } from '../habilities/habilities.module';
 import { TecnologiesModule } from '../tecnologies/tecnologies.module';
+import { ProjectsModule } from '../projects/projects.module';
 
 @NgModule({
   declarations: [PrincipalComponent, WelcomeComponent],
@@ -17,6 +18,7 @@ import { TecnologiesModule } from '../tecnologies/tecnologies.module';
     AboutModule,
     HabilitiesModule,
     TecnologiesModule,
+    ProjectsModule,
   ],
 })
 export class HomeModule {}
