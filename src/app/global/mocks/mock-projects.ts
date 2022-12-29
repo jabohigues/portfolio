@@ -11,6 +11,10 @@ export const PROJECTS: Project[] = [
     caller: '¿Quién será el vencedor?',
     category: 'Juego',
     tags: ['logoAngular', 'logoNodejs', 'logoExpress', 'logoPrisma'],
+    hrefs: {
+      github: 'https://github.com/jbohigues/futsalFantasy',
+      project: '',
+    },
   },
   {
     id: 2,
@@ -18,9 +22,13 @@ export const PROJECTS: Project[] = [
     folder: 'enTemporada',
     img: 'enTemporadaCalendario',
     description:
-      'Conviértete en mánager de un equipo ficticio con jugadores reales de la 1ª División de Fútbol Sala de España. Crea una liga con tus amigos, gestiona el capital, negocia por jugadores y hazte con el mejor equipo para ganar el campeonato.',
-    caller: '¿Quién será el vencedor?',
-    category: 'Página web',
-    tags: [],
+      'Iniciativa que pretende facilitar información sobre los productos (frutas y verduras) que están en temporada en cada época del año, además de crear una "red social" en la que subir recetas, poner likes y guardar las preferidas.',
+    caller: '¡Súmate a la ola EnTemporada!',
+    category: 'Red social',
+    tags: ['logoAngular', 'logoNodejs', 'logoExpress', 'logoPrisma'],
+    hrefs: {
+      github: 'https://github.com/Jfabregat3/EnTemporada4J',
+      project: '',
+    },
   },
 ];

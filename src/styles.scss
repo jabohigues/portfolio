@@ -11,25 +11,20 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angularPortfolio-primary: mat.define-palette(mat.$indigo-palette);
-$angularPortfolio-accent: mat.define-palette(
-  mat.$pink-palette,
-  A200,
-  A100,
-  A400
-);
+$portfolio-primary: mat.define-palette(mat.$indigo-palette);
+$portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$angularPortfolio-warn: mat.define-palette(mat.$red-palette);
+$portfolio-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$angularPortfolio-theme: mat.define-light-theme(
+$portfolio-theme: mat.define-light-theme(
   (
     color: (
-      primary: $angularPortfolio-primary,
-      accent: $angularPortfolio-accent,
-      warn: $angularPortfolio-warn,
+      primary: $portfolio-primary,
+      accent: $portfolio-accent,
+      warn: $portfolio-warn,
     ),
   )
 );
@@ -37,7 +32,7 @@ $angularPortfolio-theme: mat.define-light-theme(
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($angularPortfolio-theme);
+@include mat.all-component-themes($portfolio-theme);
 
 /* Application-wide Styles */
 html,
@@ -58,4 +53,5 @@ body {
   --red: #c00210;
   --white: #ffffff;
   --yellow: #eabf28;
+  --grey: #ccc;
 }

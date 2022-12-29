@@ -7,4 +7,8 @@ export interface Project {
   caller: string;
   category: string;
   tags: string[];
+  hrefs: {
+    github: string;
+    project: string;
+  };
 }

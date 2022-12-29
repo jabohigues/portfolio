@@ -1,0 +1,58 @@
+#formContact {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2vw;
+  border-radius: 2vw;
+  color: var(--black);
+  background-color: var(--white);
+
+  h1 {
+    font-size: 7vw;
+    margin: 2vw;
+    margin-bottom: 7vw;
+  }
+}
+
+mat-form-field {
+  font-size: 4vw !important;
+  width: 80%;
+  margin-bottom: 2vw;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  span {
+    font-size: 5vw;
+  }
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: var(--yellow) !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: var(--yellow) !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: var(--yellow) !important;
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: var(--yellow) !important;
+}
+
+// FALTA HACER QUE SE PONGA ROJO CUANDO SEA INCORRECTO
+// Y VERDE CUANDO ESTÉ BIEN
+
+::ng-deep.mat-form-field-appearance-outline.mat-form-field-outline.error {
+  color: var(--red) !important;
+}

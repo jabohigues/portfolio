@@ -8,6 +8,7 @@ import { AboutModule } from '../about/about.module';
 import { HabilitiesModule } from '../habilities/habilities.module';
 import { TecnologiesModule } from '../tecnologies/tecnologies.module';
 import { ProjectsModule } from '../projects/projects.module';
+import { ContactModule } from '../contact/contact.module';
 
 @NgModule({
   declarations: [PrincipalComponent, WelcomeComponent],
@@ -19,6 +20,7 @@ import { ProjectsModule } from '../projects/projects.module';
     HabilitiesModule,
     TecnologiesModule,
     ProjectsModule,
+    ContactModule,
   ],
 })
 export class HomeModule {}
