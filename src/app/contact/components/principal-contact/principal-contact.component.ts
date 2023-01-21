@@ -8,10 +8,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PrincipalContactComponent implements OnInit {
   registroForm!: FormGroup;
+  isCorrect: any = {
+    name: false,
+    surname: false,
+    email: false,
+    phone: false,
+    message: false,
+  };
 
   constructor(private formBuilder: FormBuilder) {
     this.registroForm = this.formBuilder.group({
       name: ['', Validators.required],
+      surname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       message: ['', [Validators.required, Validators.maxLength(500)]],
@@ -19,7 +27,13 @@ export class PrincipalContactComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  mostrar() {
-    console.log(this.registroForm.controls['name'].hasError('required'));
+  checkIsCorrect(input: string) {
+    if (
+      this.registroForm.controls[input].invalid &&
+      (this.registroForm.controls[input].dirty ||
+        this.registroForm.controls[input].touched)
+    ) {
+      this.isCorrect[input] = false;
+    } else this.isCorrect[input] = true;
   }
 }

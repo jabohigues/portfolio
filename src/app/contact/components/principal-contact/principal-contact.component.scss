@@ -31,28 +31,82 @@ mat-form-field {
   }
 }
 
-::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
+.validForm {
+  background-color: var(--green);
+  color: var(--black);
+  padding: 2vw 4vw;
+  font-size: 4vw;
+  border-radius: 2vw;
+  border: 2px solid var(--black);
+}
+
+.invalidForm {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 2vw 4vw;
+  font-size: 4vw;
+  border-radius: 2vw;
+  border: 2px solid var(--black);
+}
+
+// FORMAT MAT-INPUT COLOR
+
+// Border color of input (normal)
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
   color: var(--yellow) !important;
 }
 
-::ng-deep.mat-form-field-underline {
-  /*change color of underline*/
-  background-color: var(--yellow) !important;
+// Border color of input (focused)
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: var(--grey) !important;
 }
 
-::ng-deep.mat-form-field-ripple {
-  /*change color of underline when focused*/
-  background-color: var(--yellow) !important;
+// Border color of input (correct)
+::ng-deep
+  .mat-form-field-appearance-outline.inputCorrect
+  .mat-form-field-outline {
+  color: var(--green) !important;
 }
 
-::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
-  color: var(--yellow) !important;
-}
-
-// FALTA HACER QUE SE PONGA ROJO CUANDO SEA INCORRECTO
-// Y VERDE CUANDO ESTÉ BIEN
-
-::ng-deep.mat-form-field-appearance-outline.mat-form-field-outline.error {
+// Border color of input (error)
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-outline-thick {
   color: var(--red) !important;
+  opacity: 0.8 !important;
+}
+
+// Color of caret (normal)
+::ng-deep .mat-input-element {
+  caret-color: var(--grey) !important;
+}
+
+// Color of caret (error)
+::ng-deep .mat-form-field-invalid .mat-input-element,
+.mat-warn .mat-input-element {
+  caret-color: var(--red) !important;
+}
+
+// Color of label
+::ng-deep .mat-form-field-label {
+  color: var(--grey) !important;
+}
+
+// Color of label (focused)
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--grey) !important;
+}
+
+// Border color of input (correct)
+::ng-deep
+  .mat-form-field-appearance-outline.inputCorrect
+  .mat-form-field-label {
+  color: var(--green) !important;
+}
+
+// Color of label (error)
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: red !important;
 }
