@@ -1,4 +1,8 @@
-<form [formGroup]="registroForm" id="formContact">
+<form
+  [formGroup]="contactForm"
+  id="formContact"
+  (ngSubmit)="onSubmit(contactForm.value)"
+>
   <h1>Contáctame</h1>
 
   <!-- Name -->
@@ -7,7 +11,7 @@
     appearance="outline"
     class="{{ isCorrect['name'] ? 'inputCorrect' : '' }}"
   >
-    <mat-label>Nombre</mat-label>
+    <mat-label>Nombre completo</mat-label>
     <input
       name="name"
       matInput
@@ -18,49 +22,15 @@
     />
     <mat-error
       *ngIf="
-        registroForm.controls['name'].invalid &&
-        (registroForm.controls['name'].dirty ||
-          registroForm.controls['name'].touched)
+        contactForm.controls['name'].invalid &&
+        (contactForm.controls['name'].dirty ||
+          contactForm.controls['name'].touched)
       "
     >
-      <span *ngIf="registroForm.controls['name'].hasError('required')">
+      <span *ngIf="contactForm.controls['name'].hasError('required')">
         Debes poner un nombre
       </span>
     </mat-error>
-  </mat-form-field>
-
-  <!-- Surname1 -->
-  <mat-form-field
-    hideRequiredMarker
-    appearance="outline"
-    class="{{ isCorrect['surname'] ? 'inputCorrect' : '' }}"
-  >
-    <mat-label>Primer apellido</mat-label>
-    <input
-      name="surname"
-      matInput
-      placeholder="Escriba su primer apellido"
-      required
-      formControlName="surname"
-      (blur)="checkIsCorrect('surname')"
-    />
-    <mat-error
-      *ngIf="
-        registroForm.controls['surname'].invalid &&
-        (registroForm.controls['surname'].dirty ||
-          registroForm.controls['surname'].touched)
-      "
-    >
-      <span *ngIf="registroForm.controls['surname'].hasError('required')">
-        Debes poner un apellido
-      </span>
-    </mat-error>
-  </mat-form-field>
-
-  <!-- Surname -->
-  <mat-form-field appearance="outline">
-    <mat-label>Segundo apellido (opcional)</mat-label>
-    <input matInput />
   </mat-form-field>
 
   <!-- Email -->
@@ -83,49 +53,27 @@
     </div>
     <mat-error
       *ngIf="
-        registroForm.controls['email'].invalid &&
-        (registroForm.controls['email'].dirty ||
-          registroForm.controls['email'].touched)
+        contactForm.controls['email'].invalid &&
+        (contactForm.controls['email'].dirty ||
+          contactForm.controls['email'].touched)
       "
     >
-      <span *ngIf="registroForm.controls['email'].hasError('required')">
+      <span *ngIf="contactForm.controls['email'].hasError('required')">
         Debes poner un correo electrónico
       </span>
-      <span *ngIf="registroForm.controls['email'].hasError('email')">
+      <span *ngIf="contactForm.controls['email'].hasError('email')">
         Introduce un correo válido
       </span>
     </mat-error>
   </mat-form-field>
 
   <!-- Phone -->
-  <mat-form-field
-    class="{{ isCorrect['phone'] ? 'inputCorrect' : '' }}"
-    hideRequiredMarker
-    appearance="outline"
-  >
-    <mat-label>Teléfono</mat-label>
+  <mat-form-field appearance="outline">
+    <mat-label>Teléfono (opcional)</mat-label>
     <div class="icon">
-      <input
-        name="phone"
-        type="number"
-        matInput
-        required
-        formControlName="phone"
-        (blur)="checkIsCorrect('phone')"
-      />
+      <input name="phone" type="number" matInput formControlName="phone" />
       <span class="material-icons"> phone </span>
     </div>
-    <mat-error
-      *ngIf="
-        registroForm.controls['phone'].invalid &&
-        (registroForm.controls['phone'].dirty ||
-          registroForm.controls['phone'].touched)
-      "
-    >
-      <span *ngIf="registroForm.controls['phone'].hasError('required')">
-        Debes poner un número de teléfono
-      </span>
-    </mat-error>
   </mat-form-field>
 
   <!-- Message -->
@@ -148,23 +96,31 @@
     <mat-hint align="end">{{ input.value.length }}/500</mat-hint>
     <mat-error
       *ngIf="
-        registroForm.controls['message'].invalid &&
-        (registroForm.controls['message'].dirty ||
-          registroForm.controls['message'].touched)
+        contactForm.controls['message'].invalid &&
+        (contactForm.controls['message'].dirty ||
+          contactForm.controls['message'].touched)
       "
     >
-      <span *ngIf="registroForm.controls['message'].hasError('required')">
+      <span *ngIf="contactForm.controls['message'].hasError('required')">
         Debes poner un mensaje
       </span>
-      <span *ngIf="registroForm.controls['message'].hasError('maxlength')">
+      <span *ngIf="contactForm.controls['message'].hasError('maxlength')">
         Lo siento, el máximo es de 500 caracteres.
       </span>
     </mat-error>
   </mat-form-field>
+  <!-- <input type="hidden" name="_subject" value="Contact form submitted" />
+  <input type="hidden" name="_after" value="https://www.google.com/" />
+  <input type="hidden" name="_honeypot" value="" />
+  <input
+    type="hidden"
+    name="_confirmation"
+    value="Thank you for contacting me. I will get back to you as soon as possible.<br><br>Best regards!"
+  /> -->
   <button
     type="submit"
-    [disabled]="registroForm.invalid"
-    class="{{ registroForm.invalid ? 'invalidForm' : 'validForm' }}"
+    [disabled]="contactForm.invalid"
+    class="{{ contactForm.invalid ? 'invalidForm' : 'validForm' }}"
     mat-raised-button
   >
     Enviar mensaje

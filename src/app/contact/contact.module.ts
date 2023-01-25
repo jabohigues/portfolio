@@ -4,6 +4,8 @@ import { PrincipalContactComponent } from './components/principal-contact/princi
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { EmailServiceService } from './services/email-service.service';
 
 @NgModule({
   declarations: [PrincipalContactComponent],
@@ -12,7 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
+  providers: [EmailServiceService],
   exports: [PrincipalContactComponent],
 })
 export class ContactModule {}
