@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormGroupDirective,
+  Validators,
+} from '@angular/forms';
 import { EmailServiceService } from '../../services/email-service.service';
 
 @Component({
@@ -39,33 +44,23 @@ export class PrincipalContactComponent implements OnInit {
     } else this.isCorrect[input] = true;
   }
 
-  onSubmit(formData: any) {
+  onSubmit(formData: any, formContact: FormGroupDirective) {
     console.log(formData);
-
-    this.emailService.sendEmail(formData).subscribe(
-      {
-        next(response) {
-          console.log('Sending email...');
-          location.href = 'https://mailthis.to/confirm';
-          console.log(response);
-        },
-        error(err) {
-          console.warn(err.responseText);
-          console.log({ err });
-        },
-        complete() {
-          console.log('Email sent successfully !!');
-        },
-      }
-      // (response) => {
-      //   location.href = 'https://mailthis.to/confirm';
-      //   console.log(response);
-      // },
-      // (error) => {
-      //   console.warn(error.responseText);
-      //   console.log({ error });
-      // }
-    );
-    //this.contactForm.reset();
+    this.emailService.sendEmail(formData).subscribe({
+      next(response) {
+        console.log('Sending email...');
+      },
+      error(err) {
+        console.warn(err.responseText);
+        console.log({ err });
+      },
+      complete() {
+        location.href = 'https://mailthis.to/confirm';
+        console.log('Email sent successfully !!');
+        setTimeout(() => {
+          formContact.resetForm();
+        }, 200);
+      },
+    });
   }
 }

@@ -14,13 +14,11 @@ export class EmailServiceService {
     return this.http.post(this.api, input, { responseType: 'text' }).pipe(
       map(
         (response: any) => {
-          console.log(response);
-
+          console.log('EMAIL SERVICE');
           if (response) return response;
         },
         (error: any) => {
           console.log(error);
-
           return error;
         }
       )

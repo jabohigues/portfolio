@@ -1,7 +1,8 @@
 <form
+  #formContact="ngForm"
   [formGroup]="contactForm"
   id="formContact"
-  (ngSubmit)="onSubmit(contactForm.value)"
+  (ngSubmit)="onSubmit(contactForm.value, formContact)"
 >
   <h1>Contáctame</h1>
 
@@ -18,7 +19,7 @@
       placeholder="Escriba su nombre"
       required
       formControlName="name"
-      (blur)="checkIsCorrect('name')"
+      (keyup)="checkIsCorrect('name')"
     />
     <mat-error
       *ngIf="
@@ -47,7 +48,7 @@
         placeholder="user@example.com"
         required
         formControlName="email"
-        (blur)="checkIsCorrect('email')"
+        (keyup)="checkIsCorrect('email')"
       />
       <span class="material-icons"> mail </span>
     </div>
@@ -90,7 +91,7 @@
       required
       formControlName="message"
       maxlength="500"
-      (blur)="checkIsCorrect('message')"
+      (keyup)="checkIsCorrect('message')"
     >
     </textarea>
     <mat-hint align="end">{{ input.value.length }}/500</mat-hint>
@@ -109,14 +110,6 @@
       </span>
     </mat-error>
   </mat-form-field>
-  <!-- <input type="hidden" name="_subject" value="Contact form submitted" />
-  <input type="hidden" name="_after" value="https://www.google.com/" />
-  <input type="hidden" name="_honeypot" value="" />
-  <input
-    type="hidden"
-    name="_confirmation"
-    value="Thank you for contacting me. I will get back to you as soon as possible.<br><br>Best regards!"
-  /> -->
   <button
     type="submit"
     [disabled]="contactForm.invalid"
