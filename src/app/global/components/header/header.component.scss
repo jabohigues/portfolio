@@ -5,10 +5,11 @@ header {
   right: 0;
   padding: 0 10vw;
   max-width: 80vw;
+  border-radius: 0 0 2vw 2vw;
 }
 
 .navScroll {
   background-color: var(--yellow);
-  color: black;
-  z-index: 5;
+  color: var(--black);
+  z-index: 3;
 }

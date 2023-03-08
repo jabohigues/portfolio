@@ -5,12 +5,16 @@
   <nav id="nav" class="normal notactive">
     <div class="navContent">
       <ul>
-        <li><a>Inicio</a></li>
-        <li><a>Sobre mi</a></li>
-        <li><a>Habilidades</a></li>
-        <li><a>Herramientas</a></li>
-        <li><a>Proyectos</a></li>
-        <li><a>Contáctame</a></li>
+        <li><span>Inicio</span></li>
+        <li><span (click)="scrollIntoPage('aboutSection')">Sobre mi</span></li>
+        <li>
+          <span (click)="scrollIntoPage('divHabilities')">Habilidades</span>
+        </li>
+        <li>
+          <span (click)="scrollIntoPage('divTecnologies')">Herramientas</span>
+        </li>
+        <li><span (click)="scrollIntoPage('divProjects')">Proyectos</span></li>
+        <li><span (click)="scrollIntoPage('formContact')">Contáctame</span></li>
       </ul>
       <img src="/assets/images/logo.webp" alt="logo" />
     </div>
@@ -47,3 +51,5 @@
     </article>
   </section>
 </main>
+
+<app-footer></app-footer>

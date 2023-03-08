@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -18,19 +11,19 @@ export class NavComponent implements OnInit {
   scroll(e: any) {
     let scroll = e.scrollingElement.scrollTop;
     let toolbar = document.getElementById('toolbarNav');
+    let iconMenu = document.getElementById('iconMenu');
+
     if (scroll >= 30) {
       toolbar!.classList.add('navScroll');
+      iconMenu!.classList.add('iconMenuScroll');
     } else {
       toolbar!.classList.remove('navScroll');
+      iconMenu!.classList.remove('iconMenuScroll');
     }
   }
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  navigate(ruta: string) {
-    this.router.navigate([ruta]);
-  }
 
   toggleMenu() {
     let divBack = document.getElementById('divBack');

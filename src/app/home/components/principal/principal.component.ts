@@ -20,4 +20,12 @@ export class PrincipalComponent implements OnInit {
       nav?.classList.toggle('normal');
     }, 200);
   }
+
+  scrollIntoPage(href: string) {
+    let e = document.getElementById(href);
+    e!.scrollIntoView({
+      behavior: 'smooth',
+    });
+    this.toggleMenu();
+  }
 }

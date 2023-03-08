@@ -1,61 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PrincipalAboutComponent } from './about/components/principal-about/principal-about.component';
+import { PrincipalContactComponent } from './contact/components/principal-contact/principal-contact.component';
+import { PrincipalHabilitiesComponent } from './habilities/components/principal-habilities/principal-habilities.component';
 import { PrincipalComponent } from './home/components/principal/principal.component';
+import { PrincipalProjectsComponent } from './projects/components/principal-projects/principal-projects.component';
+import { PrincipalTecnologiesComponent } from './tecnologies/components/principal-tecnologies/principal-tecnologies.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: PrincipalComponent },
-  /*{ path: 'inicio', component: NoticiarioComponent, canActivate: [LoginGuard] },
-  {
-    path: 'clasificacion',
-    component: PrincipalClasificacionComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'alineacion',
-    component: PrincipalAlineacionComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'mercado',
-    component: PrincipalMercadoComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'jornada',
-    component: PrincipalJornadaComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'liga',
-    component: PrincipalLigaComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'liga/crearLiga',
-    component: PrincipalCrearLigaComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'liga/unirseLiga',
-    component: PrincipalUnirseLigaComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'perfil',
-    component: PrincipalPerfilComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'perfil/configuracion',
-    component: PrincipalConfPerfilComponent,
-    canActivate: [LoginGuard],
-  },
-  {
-    path: 'perfil/configuracionLiga',
-    component: PrincipalConfLigaComponent,
-    canActivate: [LoginGuard, UserLiderGuard],
-  },*/
+  // { path: 'about', component: PrincipalAboutComponent },
+  // { path: 'projects', component: PrincipalProjectsComponent },
+  // { path: 'habilities', component: PrincipalHabilitiesComponent },
+  // { path: 'tecnologies', component: PrincipalTecnologiesComponent },
+  // { path: 'contact', component: PrincipalContactComponent },
+
   // { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page https://angular.io/guide/router
 ];
 

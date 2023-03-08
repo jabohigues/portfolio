@@ -9,10 +9,14 @@
     width: 10vw;
   }
 
-  .iconMenu {
-    color: white;
+  #iconMenu {
+    color: var(--white);
     font-size: 8vw;
     width: 8vw;
     height: fit-content;
+
+    &.iconMenuScroll {
+      color: var(--black);
+    }
   }
 }
