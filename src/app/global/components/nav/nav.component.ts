@@ -32,6 +32,10 @@ export class NavComponent implements OnInit {
     let nav = document.getElementById('nav');
     nav!.classList.toggle('active');
     nav!.classList.toggle('notactive');
+
+    let iconMenu = document.getElementById('iconMenu');
+    iconMenu!.classList.toggle('active');
+
     setTimeout(() => {
       nav?.classList.toggle('normal');
     }, 200);

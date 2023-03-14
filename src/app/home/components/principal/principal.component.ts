@@ -13,10 +13,14 @@ export class PrincipalComponent implements OnInit {
   // Show or hide nav and divBack
   toggleMenu() {
     let divBack = document.getElementById('divBack');
-    divBack?.classList.toggle('active');
+    divBack!.classList.toggle('active');
     let nav = document.getElementById('nav');
-    nav?.classList.toggle('active');
-    nav?.classList.toggle('notactive');
+    nav!.classList.toggle('active');
+    nav!.classList.toggle('notactive');
+
+    let iconMenu = document.getElementById('iconMenu');
+    iconMenu!.classList.toggle('active');
+
     setTimeout(() => {
       nav?.classList.toggle('normal');
     }, 200);
