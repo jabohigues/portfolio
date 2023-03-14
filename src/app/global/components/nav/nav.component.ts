@@ -6,8 +6,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  currentPosition = window.scrollY;
-  @HostListener('window:scroll', ['$event.target']) // for window scroll events
+  // for window scroll events
+  @HostListener('window:scroll', ['$event.target'])
   scroll(e: any) {
     let scroll = e.scrollingElement.scrollTop;
     let toolbar = document.getElementById('toolbarNav');
@@ -25,14 +25,31 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // Show or hide nav and divBack
   toggleMenu() {
     let divBack = document.getElementById('divBack');
-    divBack?.classList.toggle('active');
+    divBack!.classList.toggle('active');
     let nav = document.getElementById('nav');
-    nav?.classList.toggle('active');
-    nav?.classList.toggle('notactive');
+    nav!.classList.toggle('active');
+    nav!.classList.toggle('notactive');
     setTimeout(() => {
       nav?.classList.toggle('normal');
     }, 200);
+  }
+
+  // Do the scroll into the view
+  scrollIntoPage(href: string) {
+    let e = document.getElementById(href);
+    let block: ScrollLogicalPosition = 'center';
+
+    if (href == 'divProjects') block = 'start';
+    e!.scrollIntoView({
+      behavior: 'smooth',
+      block: block,
+      inline: 'center',
+    });
+
+    let nav = document.getElementById('nav');
+    if (nav!.className == 'active') this.toggleMenu();
   }
 }

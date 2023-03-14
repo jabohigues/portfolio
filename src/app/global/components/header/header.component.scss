@@ -12,4 +12,6 @@ header {
   background-color: var(--yellow);
   color: var(--black);
   z-index: 3;
+  position: sticky;
+  display: block;
 }

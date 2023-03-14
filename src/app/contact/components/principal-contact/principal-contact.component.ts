@@ -45,7 +45,6 @@ export class PrincipalContactComponent implements OnInit {
   }
 
   onSubmit(formData: any, formContact: FormGroupDirective) {
-    console.log(formData);
     this.emailService.sendEmail(formData).subscribe({
       next(response) {
         console.log('Sending email...');

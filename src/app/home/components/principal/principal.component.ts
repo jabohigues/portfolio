@@ -10,6 +10,7 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // Show or hide nav and divBack
   toggleMenu() {
     let divBack = document.getElementById('divBack');
     divBack?.classList.toggle('active');
@@ -21,11 +22,23 @@ export class PrincipalComponent implements OnInit {
     }, 200);
   }
 
+  // Do the scroll into the view
   scrollIntoPage(href: string) {
     let e = document.getElementById(href);
+    let block: ScrollLogicalPosition = 'center';
+    if (href == 'divProjects') block = 'start';
+
     e!.scrollIntoView({
       behavior: 'smooth',
+      block: block,
+      inline: 'center',
     });
+
+    if (href != 'home') {
+      let top = e?.offsetTop;
+      window.scrollTo({ top: top! - 60, behavior: 'smooth' });
+    }
+
     this.toggleMenu();
   }
 }

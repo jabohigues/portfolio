@@ -1,4 +1,8 @@
 <mat-toolbar class="toolbar">
-  <img src="/assets/images/logo.webp" alt="logo" />
+  <img
+    src="/assets/images/logo.webp"
+    alt="logo"
+    (click)="scrollIntoPage('home')"
+  />
   <mat-icon id="iconMenu" (click)="toggleMenu()">menu</mat-icon>
 </mat-toolbar>
