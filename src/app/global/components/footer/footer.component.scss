@@ -10,8 +10,30 @@ footer {
 
   div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+
+    p,
+    a {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      padding: 2vw;
+    }
+
+    a {
+      padding: 0 0.75vw;
+    }
+
+    #socialMedia {
+      display: flex;
+      justify-content: space-between;
+    }
 
     img {
       width: 5vw;
