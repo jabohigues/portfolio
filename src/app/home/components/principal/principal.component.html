@@ -6,7 +6,6 @@
     <div class="navContent">
       <ul>
         <li><span (click)="scrollIntoPage('home')">Inicio</span></li>
-        <li><span (click)="scrollIntoPage('aboutSection')">Sobre mí</span></li>
         <li><span (click)="scrollIntoPage('divProjects')">Proyectos</span></li>
         <li>
           <span (click)="scrollIntoPage('divHabilities')">Habilidades</span>
@@ -14,6 +13,7 @@
         <li>
           <span (click)="scrollIntoPage('divTecnologies')">Tecnologías</span>
         </li>
+        <li><span (click)="scrollIntoPage('aboutSection')">Sobre mí</span></li>
         <li><span (click)="scrollIntoPage('formContact')">Contáctame</span></li>
       </ul>
       <!-- <img src="/assets/images/logo.webp" alt="logo" /> -->
@@ -23,11 +23,6 @@
     <article>
       <app-welcome></app-welcome>
       <img src="/assets/images/emoji.webp" alt="Bienvenidos" />
-    </article>
-  </section>
-  <section>
-    <article>
-      <app-principal-about></app-principal-about>
     </article>
   </section>
   <section>
@@ -43,6 +38,11 @@
   <section>
     <article>
       <app-principal-tecnologies></app-principal-tecnologies>
+    </article>
+  </section>
+  <section>
+    <article>
+      <app-principal-about></app-principal-about>
     </article>
   </section>
   <section>

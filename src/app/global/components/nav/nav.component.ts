@@ -1,4 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { MenuState } from 'src/app/core/models/menustate.interface';
+import { toggleMenuActive } from 'src/app/state/actions/menustate.actions';
+import { selectMenuActive } from 'src/app/state/selectors/menustate.selector';
 
 @Component({
   selector: 'app-nav',
@@ -6,6 +11,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
+  activemenu$: Observable<MenuState> = new Observable<MenuState>();
+
   // for window scroll events
   @HostListener('window:scroll', ['$event.target'])
   scroll(e: any) {
@@ -21,24 +28,31 @@ export class NavComponent implements OnInit {
       iconMenu!.classList.remove('iconMenuScroll');
     }
   }
-  constructor() {}
+  constructor(private store: Store<any>) {}
 
   ngOnInit(): void {}
 
   // Show or hide nav and divBack
   toggleMenu() {
-    let divBack = document.getElementById('divBack');
-    divBack!.classList.toggle('active');
-    let nav = document.getElementById('nav');
-    nav!.classList.toggle('active');
-    nav!.classList.toggle('notactive');
+    console.log('hola button menu');
+    this.store.dispatch(toggleMenuActive());
+    this.activemenu$ = this.store.select(selectMenuActive);
+    this.activemenu$.forEach((vale) => {
+      console.log(vale);
+    });
 
-    let iconMenu = document.getElementById('iconMenu');
-    iconMenu!.classList.toggle('active');
+    // let divBack = document.getElementById('divBack');
+    // divBack!.classList.toggle('active');
+    // let nav = document.getElementById('nav');
+    // nav!.classList.toggle('active');
+    // nav!.classList.toggle('notactive');
 
-    setTimeout(() => {
-      nav?.classList.toggle('normal');
-    }, 200);
+    // let iconMenu = document.getElementById('iconMenu');
+    // iconMenu!.classList.toggle('active');
+
+    // setTimeout(() => {
+    //   nav?.classList.toggle('normal');
+    // }, 200);
   }
 
   // Do the scroll into the view

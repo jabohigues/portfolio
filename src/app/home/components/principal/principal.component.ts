@@ -12,18 +12,20 @@ export class PrincipalComponent implements OnInit {
 
   // Show or hide nav and divBack
   toggleMenu() {
-    let divBack = document.getElementById('divBack');
-    divBack!.classList.toggle('active');
-    let nav = document.getElementById('nav');
-    nav!.classList.toggle('active');
-    nav!.classList.toggle('notactive');
+    console.log('hola');
 
-    let iconMenu = document.getElementById('iconMenu');
-    iconMenu!.classList.toggle('active');
+    // let divBack = document.getElementById('divBack');
+    // divBack!.classList.toggle('active');
+    // let nav = document.getElementById('nav');
+    // nav!.classList.toggle('active');
+    // nav!.classList.toggle('notactive');
 
-    setTimeout(() => {
-      nav?.classList.toggle('normal');
-    }, 200);
+    // let iconMenu = document.getElementById('iconMenu');
+    // iconMenu!.classList.toggle('active');
+
+    // setTimeout(() => {
+    //   nav?.classList.toggle('normal');
+    // }, 200);
   }
 
   // Do the scroll into the view
