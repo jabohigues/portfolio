@@ -1,6 +1,7 @@
 main {
   overflow: hidden;
   margin-top: 10vh;
+
   section {
     margin-bottom: 30vh;
   }
@@ -29,74 +30,5 @@ main {
     bottom: 0;
     z-index: 1;
     opacity: 0.5;
-  }
-}
-
-nav.notactive {
-  animation: desappear 0.3s ease-out;
-}
-nav {
-  &.normal {
-    opacity: 0;
-    z-index: -1;
-  }
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  border-radius: 0 2vw 2vw 0;
-  background-color: var(--black);
-  padding: 3vw 5vw;
-  width: 50vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &.active {
-    opacity: 1;
-    z-index: 2;
-    animation: fadein 0.2s ease-in, appear 0.3s ease-in;
-  }
-
-  .navContent {
-    color: var(--white);
-    font-size: 5vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 10vw;
-
-    ul {
-      list-style: none;
-      padding: 0;
-
-      li {
-        margin: 4vw 0;
-      }
-    }
-    img {
-      width: 20vw;
-    }
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes desappear {
-  to {
-    width: 0;
   }
 }

@@ -1,52 +1,82 @@
-.toolbar {
-  background-color: transparent;
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  min-height: 12vw;
+  padding: 3vw 5vw;
+  width: 50vw;
+  border-radius: 0 2vw 2vw 0;
+  background-color: var(--black);
 
-  img {
-    width: 10vw;
+  &.normal {
+    opacity: 0;
+    z-index: -1;
   }
 
-  // button menu
-  #iconMenu {
-    width: 8vw;
+  &.active {
+    opacity: 1;
+    z-index: 2;
+    animation: fadein 0.2s ease-in, appear 0.3s ease-in;
+  }
+
+  &.notactive {
+    animation: desappear 0.3s ease-out, desappearZIndex 0.3s ease-out;
+  }
+
+  .navContent {
+    color: var(--white);
+    font-size: 5vw;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    border: 0;
-    background: transparent;
-    gap: 2vw;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 10vw;
 
-    div {
-      background: var(--white);
-      height: 2px;
-      width: 100%;
-      border-radius: 5px;
-      transition: all 0.5s;
-      transform-origin: left;
-    }
+    ul {
+      list-style: none;
+      padding: 0;
 
-    // change color of button menu
-    &.iconMenuScroll {
-      div {
-        background: var(--black);
+      li {
+        margin: 4vw 0;
       }
     }
-
-    // change burguer menu to X menu
-    &.active {
-      div:first-child {
-        transform: rotate(45deg);
-      }
-      div:nth-child(2) {
-        opacity: 0;
-      }
-      div:last-child {
-        transform: rotate(-45deg);
-      }
+    img {
+      width: 20vw;
     }
+  }
+}
+
+.linkActive {
+  color: var(--yellow);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    z-index: 0;
+  }
+  to {
+    z-index: 2;
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes desappear {
+  to {
+    width: 0;
+  }
+}
+
+@keyframes desappearZIndex {
+  to {
+    z-index: 0;
   }
 }

@@ -2,23 +2,7 @@
 
 <main>
   <div id="divBack" (click)="toggleMenu()"></div>
-  <nav id="nav" class="normal notactive">
-    <div class="navContent">
-      <ul>
-        <li><span (click)="scrollIntoPage('home')">Inicio</span></li>
-        <li><span (click)="scrollIntoPage('divProjects')">Proyectos</span></li>
-        <li>
-          <span (click)="scrollIntoPage('divHabilities')">Habilidades</span>
-        </li>
-        <li>
-          <span (click)="scrollIntoPage('divTecnologies')">Tecnologías</span>
-        </li>
-        <li><span (click)="scrollIntoPage('aboutSection')">Sobre mí</span></li>
-        <li><span (click)="scrollIntoPage('formContact')">Contáctame</span></li>
-      </ul>
-      <!-- <img src="/assets/images/logo.webp" alt="logo" /> -->
-    </div>
-  </nav>
+  <app-nav></app-nav>
   <section>
     <article>
       <app-welcome></app-welcome>

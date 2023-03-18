@@ -1,13 +1,47 @@
-<mat-toolbar class="toolbar">
-  <img
-    src="/assets/images/logo.webp"
-    alt="logo"
-    (click)="scrollIntoPage('home')"
-  />
-  <button id="iconMenu" (click)="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </button>
-  <!-- <mat-icon id="iconMenu" (click)="toggleMenu()">menu</mat-icon> -->
-</mat-toolbar>
+<nav id="nav" class="normal notactive">
+  <div class="navContent">
+    <ul>
+      <li>
+        <span id="homelink" (click)="scrollIntoPage($event, 'home')"
+          >Inicio</span
+        >
+      </li>
+      <li>
+        <span
+          id="divProjectslink"
+          (click)="scrollIntoPage($event, 'divProjects')"
+          >Proyectos</span
+        >
+      </li>
+      <li>
+        <span
+          id="divHabilitieslink"
+          (click)="scrollIntoPage($event, 'divHabilities')"
+          >Habilidades</span
+        >
+      </li>
+      <li>
+        <span
+          id="divTecnologieslink"
+          (click)="scrollIntoPage($event, 'divTecnologies')"
+          >Tecnologías</span
+        >
+      </li>
+      <li>
+        <span
+          id="aboutSectionlink"
+          (click)="scrollIntoPage($event, 'aboutSection')"
+          >Sobre mí</span
+        >
+      </li>
+      <li>
+        <span
+          id="formContactlink"
+          (click)="scrollIntoPage($event, 'formContact')"
+          >Contáctame</span
+        >
+      </li>
+    </ul>
+    <!-- <img src="/assets/images/logo.webp" alt="logo" /> -->
+  </div>
+</nav>
