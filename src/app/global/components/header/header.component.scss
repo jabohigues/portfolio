@@ -6,12 +6,12 @@ header {
   padding: 0 10vw;
   max-width: 80vw;
   border-radius: 0 0 2vw 2vw;
+  z-index: 3;
 }
 
 .navScroll {
   background-color: var(--yellow);
   color: var(--black);
-  z-index: 3;
   position: sticky;
   display: block;
 }

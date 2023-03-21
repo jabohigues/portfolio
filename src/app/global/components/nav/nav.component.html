@@ -2,42 +2,50 @@
   <div class="navContent">
     <ul>
       <li>
-        <span id="homelink" (click)="scrollIntoPage($event, 'home')"
+        <span
+          id="homelink"
+          [ngClass]="{ linkActive: homeInView }"
+          (click)="scrollIntoPage('home')"
           >Inicio</span
         >
       </li>
       <li>
         <span
           id="divProjectslink"
-          (click)="scrollIntoPage($event, 'divProjects')"
+          [ngClass]="{ linkActive: projectsInView }"
+          (click)="scrollIntoPage('divProjects')"
           >Proyectos</span
         >
       </li>
       <li>
         <span
           id="divHabilitieslink"
-          (click)="scrollIntoPage($event, 'divHabilities')"
+          [ngClass]="{ linkActive: habilitiesInView }"
+          (click)="scrollIntoPage('divHabilities')"
           >Habilidades</span
         >
       </li>
       <li>
         <span
           id="divTecnologieslink"
-          (click)="scrollIntoPage($event, 'divTecnologies')"
+          [ngClass]="{ linkActive: tecnologiesInView }"
+          (click)="scrollIntoPage('divTecnologies')"
           >Tecnologías</span
         >
       </li>
       <li>
         <span
           id="aboutSectionlink"
-          (click)="scrollIntoPage($event, 'aboutSection')"
+          [ngClass]="{ linkActive: aboutInView }"
+          (click)="scrollIntoPage('aboutSection')"
           >Sobre mí</span
         >
       </li>
       <li>
         <span
           id="formContactlink"
-          (click)="scrollIntoPage($event, 'formContact')"
+          [ngClass]="{ linkActive: contactInView }"
+          (click)="scrollIntoPage('formContact')"
           >Contáctame</span
         >
       </li>

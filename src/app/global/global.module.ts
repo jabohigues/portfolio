@@ -4,26 +4,13 @@ import { LogoComponent } from './components/logo/logo.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './components/main/main.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [
-    LogoComponent,
-    HeaderComponent,
-    NavComponent,
-    FooterComponent,
-    MainComponent,
-  ],
+  declarations: [LogoComponent, HeaderComponent, NavComponent, FooterComponent],
   imports: [CommonModule, MatSidenavModule, MatIconModule, MatToolbarModule],
-  exports: [
-    LogoComponent,
-    HeaderComponent,
-    NavComponent,
-    FooterComponent,
-    MainComponent,
-  ],
+  exports: [LogoComponent, HeaderComponent, NavComponent, FooterComponent],
 })
 export class GlobalModule {}

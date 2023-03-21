@@ -22,9 +22,6 @@ export class PrincipalComponent implements OnInit {
     let iconMenu = document.getElementById('iconMenu');
     iconMenu!.classList.toggle('active');
 
-    let main = document.getElementById('main');
-    main!.classList.toggle('active');
-
     setTimeout(() => {
       nav?.classList.toggle('normal');
     }, 200);

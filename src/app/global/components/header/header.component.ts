@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { GlobalFunctions } from '../global.functions';
 
 @Component({
   selector: 'app-header',
@@ -27,31 +28,11 @@ export class HeaderComponent implements OnInit {
 
   // Show or hide nav and divBack
   toggleMenu() {
-    let divBack = document.getElementById('divBack');
-    divBack!.classList.toggle('active');
-    let nav = document.getElementById('nav');
-    nav!.classList.toggle('active');
-    nav!.classList.toggle('notactive');
-    let iconMenu = document.getElementById('iconMenu');
-    iconMenu!.classList.toggle('active');
-    setTimeout(() => {
-      nav?.classList.toggle('normal');
-    }, 200);
+    GlobalFunctions.toggleMenu();
   }
 
   // Do the scroll into the view
   scrollIntoPage(href: string) {
-    let e = document.getElementById(href);
-    let block: ScrollLogicalPosition = 'center';
-
-    if (href == 'divProjects') block = 'start';
-    e!.scrollIntoView({
-      behavior: 'smooth',
-      block: block,
-      inline: 'center',
-    });
-
-    let nav = document.getElementById('nav');
-    if (nav!.className == 'active') this.toggleMenu();
+    GlobalFunctions.scrollIntoPage(href, true);
   }
 }

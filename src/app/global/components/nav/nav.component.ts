@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLinkActive } from '@angular/router';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { GlobalFunctions } from '../global.functions';
+import { GlobalVariables } from '../global.variables';
 
 @Component({
   selector: 'app-nav',
@@ -7,57 +8,55 @@ import { RouterLinkActive } from '@angular/router';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  lastLink: string = '';
+  homeInView: boolean = false;
+  projectsInView: boolean = false;
+  habilitiesInView: boolean = false;
+  tecnologiesInView: boolean = false;
+  aboutInView: boolean = false;
+  contactInView: boolean = false;
+
+  @HostListener('window:scroll', []) onWindowScroll() {
+    let posTopView = window.scrollY;
+    // let posButView = posTopView + window.innerHeight;
+    console.log(posTopView);
+    if (posTopView < GlobalFunctions.getTopProjects()) {
+      this.homeInView = !this.homeInView;
+    } else if (posTopView < GlobalFunctions.getTopHabilities()) {
+      this.projectsInView = !this.projectsInView;
+    } else if (posTopView < GlobalFunctions.getTopTecnologies()) {
+      this.habilitiesInView = !this.habilitiesInView;
+    } else if (posTopView < GlobalFunctions.getTopAbout()) {
+      this.tecnologiesInView = !this.tecnologiesInView;
+    } else if (posTopView < GlobalFunctions.getTopContact()) {
+      this.aboutInView = !this.aboutInView;
+    } else if (posTopView > GlobalFunctions.getTopContact()) {
+      this.contactInView = !this.contactInView;
+    }
+
+    //  let elemTop = elem.offsetTop;
+    //  let elemBottom = elemTop + elem.offsetHeight;
+    //  return (
+    //    (elemBottom < posButView && elemBottom > posTopView) ||
+    //    (elemTop > posTopView && elemTop < posButView)
+    //  );
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
+
   // Show or hide nav and divBack
   toggleMenu() {
-    let divBack = document.getElementById('divBack');
-    divBack!.classList.toggle('active');
-    let nav = document.getElementById('nav');
-    nav!.classList.toggle('active');
-    nav!.classList.toggle('notactive');
-
-    let iconMenu = document.getElementById('iconMenu');
-    iconMenu!.classList.toggle('active');
-
-    setTimeout(() => {
-      nav?.classList.toggle('normal');
-    }, 200);
-  }
-
-  // Do the scroll into the view
-  scrollIntoPage(event: any, href: string) {
-    let div = document.getElementById(href);
-    let block: ScrollLogicalPosition = 'center';
-    href == 'divProjects' ? (block = 'start') : '';
-
-    div!.scrollIntoView({
-      behavior: 'smooth',
-      block: block,
-      inline: 'center',
-    });
-
-    let top = div!.offsetTop;
-    href != 'home'
-      ? href != 'formContact'
-        ? window.scrollTo({ top: top - 50, behavior: 'smooth' })
-        : window.scrollTo({ top: top - 70, behavior: 'smooth' })
-      : '';
-
-    this.toggleMenu();
-    this.linkMenuActive(event, href);
+    GlobalFunctions.toggleMenu();
   }
 
   // Do active link of menu
-  linkMenuActive(event: any, href: string) {
-    if (this.lastLink != '') {
-      let lastLink = document.getElementById(this.lastLink + 'link');
-      lastLink!.classList.toggle('linkActive');
-    }
-    this.lastLink = href;
-    let link = document.getElementById(href + 'link');
-    link!.classList.toggle('linkActive');
+  linkMenuActive(href: string) {
+    GlobalFunctions.linkMenuActive(href);
+  }
+
+  // Do the scroll into the view
+  scrollIntoPage(href: string) {
+    GlobalFunctions.scrollIntoPage(href, false);
   }
 }
