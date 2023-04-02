@@ -58,50 +58,33 @@ export class GlobalFunctions {
   }
 
   // Do the scroll into the view
-  public static scrollIntoPage(href: string, isLogoButton: boolean) {
+  public static scrollIntoPage(href: string) {
     let div = document.getElementById(href);
     let top = div!.offsetTop;
-    console.log(GlobalVariables.lastLink);
 
-    if (href == 'home') {
-      div!.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'center',
-      });
-    } else {
+    if (href == 'home') window.scrollTo({ top: top - 500, behavior: 'smooth' });
+    else {
       if (GlobalVariables.lastLink == 'home')
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      else
-        href != 'formContact'
-          ? window.scrollTo({ top: top - 50, behavior: 'smooth' })
-          : window.scrollTo({ top: top - 70, behavior: 'smooth' });
+        this.scrollIfFormContact(href, top);
+      else {
+        if (GlobalVariables.firstClickLink && scrollY <= 10) {
+          GlobalVariables.firstClickLink = !GlobalVariables.firstClickLink;
+          this.scrollIfFormContact(href, top);
+        } else {
+          href != 'formContact'
+            ? window.scrollTo({ top: top - 50, behavior: 'smooth' })
+            : window.scrollTo({ top: top - 70, behavior: 'smooth' });
+        }
+      }
     }
-    // let block: ScrollLogicalPosition = 'center';
-    // href == 'divProjects' ? (block = 'start') : '';
-
-    // if (GlobalVariables.firstClickLink) {
-    //   console.log('firstclick');
-    //   GlobalVariables.firstClickLink = !GlobalVariables.firstClickLink;
-    //   href != 'home'
-    //     ? href != 'formContact'
-    //       ? window.scrollTo({ top: top, behavior: 'smooth' })
-    //       : window.scrollTo({ top: top, behavior: 'smooth' })
-    //     : '';
-    // } else {
-    //   console.log('NOfirstclick');
-    //   href != 'home'
-    //     ? href != 'formContact'
-    //       ? window.scrollTo({ top: top - 50, behavior: 'smooth' })
-    //       : window.scrollTo({ top: top - 70, behavior: 'smooth' })
-    //     : div!.scrollIntoView({
-    //         behavior: 'smooth',
-    //         block: 'center',
-    //         inline: 'center',
-    //       });
-    // }
 
     if (GlobalVariables.menuActive) this.toggleMenu();
     this.linkMenuActive(href);
+  }
+
+  public static scrollIfFormContact(href: string, top: number) {
+    href != 'formContact'
+      ? window.scrollTo({ top: top, behavior: 'smooth' })
+      : window.scrollTo({ top: top - 20, behavior: 'smooth' });
   }
 }

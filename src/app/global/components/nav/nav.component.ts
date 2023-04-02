@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { GlobalFunctions } from '../global.functions';
-import { GlobalVariables } from '../global.variables';
 
 @Component({
   selector: 'app-nav',
@@ -8,42 +7,16 @@ import { GlobalVariables } from '../global.variables';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  homeInView: boolean = false;
-  projectsInView: boolean = false;
-  habilitiesInView: boolean = false;
-  tecnologiesInView: boolean = false;
-  aboutInView: boolean = false;
-  contactInView: boolean = false;
-
+  //Activate link menu when do scroll
   @HostListener('window:scroll', []) onWindowScroll() {
-    let posTopView = window.scrollY;
-    // let posButView = posTopView + window.innerHeight;
-    console.log(posTopView);
-    if (posTopView < GlobalFunctions.getTopProjects()) {
-      this.homeInView = !this.homeInView;
-    } else if (posTopView < GlobalFunctions.getTopHabilities()) {
-      this.projectsInView = !this.projectsInView;
-    } else if (posTopView < GlobalFunctions.getTopTecnologies()) {
-      this.habilitiesInView = !this.habilitiesInView;
-    } else if (posTopView < GlobalFunctions.getTopAbout()) {
-      this.tecnologiesInView = !this.tecnologiesInView;
-    } else if (posTopView < GlobalFunctions.getTopContact()) {
-      this.aboutInView = !this.aboutInView;
-    } else if (posTopView > GlobalFunctions.getTopContact()) {
-      this.contactInView = !this.contactInView;
-    }
-
-    //  let elemTop = elem.offsetTop;
-    //  let elemBottom = elemTop + elem.offsetHeight;
-    //  return (
-    //    (elemBottom < posButView && elemBottom > posTopView) ||
-    //    (elemTop > posTopView && elemTop < posButView)
-    //  );
+    this.activateLinkInScroll();
   }
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activateLinkInScroll();
+  }
 
   // Show or hide nav and divBack
   toggleMenu() {
@@ -57,6 +30,28 @@ export class NavComponent implements OnInit {
 
   // Do the scroll into the view
   scrollIntoPage(href: string) {
-    GlobalFunctions.scrollIntoPage(href, false);
+    GlobalFunctions.scrollIntoPage(href);
+  }
+
+  //Activate link menu when do scroll
+  activateLinkInScroll() {
+    const sections = document.querySelectorAll('section');
+    const navLi = document.querySelectorAll('.navContent ul li span');
+
+    let current: string | null = '';
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      if (scrollY >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLi.forEach((li) => {
+      li.classList.remove('linkActive');
+      if (li.classList.contains(current!)) {
+        li.classList.add('linkActive');
+      }
+    });
   }
 }

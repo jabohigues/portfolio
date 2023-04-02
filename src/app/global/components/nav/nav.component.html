@@ -2,17 +2,14 @@
   <div class="navContent">
     <ul>
       <li>
-        <span
-          id="homelink"
-          [ngClass]="{ linkActive: homeInView }"
-          (click)="scrollIntoPage('home')"
+        <span id="homelink" class="home" (click)="scrollIntoPage('home')"
           >Inicio</span
         >
       </li>
       <li>
         <span
           id="divProjectslink"
-          [ngClass]="{ linkActive: projectsInView }"
+          class="projects"
           (click)="scrollIntoPage('divProjects')"
           >Proyectos</span
         >
@@ -20,7 +17,7 @@
       <li>
         <span
           id="divHabilitieslink"
-          [ngClass]="{ linkActive: habilitiesInView }"
+          class="habilities"
           (click)="scrollIntoPage('divHabilities')"
           >Habilidades</span
         >
@@ -28,7 +25,7 @@
       <li>
         <span
           id="divTecnologieslink"
-          [ngClass]="{ linkActive: tecnologiesInView }"
+          class="tecnologies"
           (click)="scrollIntoPage('divTecnologies')"
           >Tecnologías</span
         >
@@ -36,7 +33,7 @@
       <li>
         <span
           id="aboutSectionlink"
-          [ngClass]="{ linkActive: aboutInView }"
+          class="about"
           (click)="scrollIntoPage('aboutSection')"
           >Sobre mí</span
         >
@@ -44,7 +41,7 @@
       <li>
         <span
           id="formContactlink"
-          [ngClass]="{ linkActive: contactInView }"
+          class="contact"
           (click)="scrollIntoPage('formContact')"
           >Contáctame</span
         >

@@ -33,6 +33,6 @@ export class HeaderComponent implements OnInit {
 
   // Do the scroll into the view
   scrollIntoPage(href: string) {
-    GlobalFunctions.scrollIntoPage(href, true);
+    GlobalFunctions.scrollIntoPage(href);
   }
 }
