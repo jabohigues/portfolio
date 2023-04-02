@@ -14,13 +14,12 @@
 #habilities {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1vw;
+  gap: 2vw;
 
   .imageCard {
     display: grid;
     place-items: center;
-    width: 15vw;
-    height: 20vw;
+    min-height: 20vw;
   }
 
   img {
@@ -38,14 +37,13 @@ mat-card {
   background-color: transparent;
   box-shadow: none !important;
   color: var(--white);
-  // border: 2px solid var(--yellow);
+  transition: all 0.3s;
 
   &:hover {
-    box-shadow: 0px 5px 5px -10px var(--yellow), 0px 1px 1px 0px var(--yellow),
-      5px 1px 3px 0px var(--yellow) !important;
+    transform: scale(1.2);
   }
 }
 
 mat-card-content {
-  font-size: 4vw;
+  font-size: 3.5vw;
 }

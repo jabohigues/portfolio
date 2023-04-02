@@ -14,12 +14,11 @@
 #tecnologies {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1vw;
+  gap: 2vw;
 
   .imageCard {
     display: grid;
     place-items: center;
-    width: 15vw;
     height: 20vw;
   }
 
@@ -38,8 +37,12 @@ mat-card {
   background-color: transparent;
   box-shadow: none !important;
   color: var(--white);
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 mat-card-content {
-  font-size: 4vw;
+  font-size: 3.5vw;
 }

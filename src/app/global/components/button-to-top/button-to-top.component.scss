@@ -1,0 +1,25 @@
+#buttonToTop {
+  position: fixed;
+  bottom: 2.5vw;
+  right: 1.5vw;
+  padding: 0;
+  margin: 0;
+  background-color: var(--black);
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  border-radius: 50%;
+
+  &:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+    border: 1px solid var(--black);
+    cursor: pointer;
+  }
+  mat-icon {
+    font-size: 1.5rem;
+    padding: 1vw;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+  }
+}

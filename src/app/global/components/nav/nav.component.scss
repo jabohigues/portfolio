@@ -40,6 +40,11 @@ nav {
 
       li {
         margin: 4vw 0;
+
+        &:hover {
+          color: var(--green);
+          cursor: pointer;
+        }
       }
     }
     img {
