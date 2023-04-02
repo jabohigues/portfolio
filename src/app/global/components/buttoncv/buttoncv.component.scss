@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid var(--yellow);
+  color: var(--yellow);
+  padding: 1vw 2vw;
+  border-radius: 1vw;
+
+  &:hover {
+    border: 1px solid var(--black);
+    background-color: var(--yellow);
+    color: var(--black);
+  }
+}

@@ -37,6 +37,7 @@ mat-card {
   background-color: transparent;
   box-shadow: none !important;
   color: var(--white);
+  transition: all 0.3s;
 
   &:hover {
     transform: scale(1.2);

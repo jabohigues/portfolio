@@ -1,0 +1,15 @@
+img {
+  width: 7vw;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s;
+
+  &.ismenu {
+    width: 8vw;
+    margin: 0 2vw;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

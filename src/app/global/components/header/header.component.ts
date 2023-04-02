@@ -7,7 +7,7 @@ import { GlobalFunctions } from '../global.functions';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  // for window scroll events
+  // Fixed menu on top when do scroll
   @HostListener('window:scroll', ['$event.target'])
   scroll(e: any) {
     let scroll = e.scrollingElement.scrollTop;

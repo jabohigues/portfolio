@@ -26,13 +26,23 @@ nav {
     animation: desappear 0.3s ease-out, desappearZIndex 0.3s ease-out;
   }
 
+  #separatordiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      color: white;
+    }
+  }
+
   .navContent {
     color: var(--white);
     font-size: 5vw;
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 10vw;
+    margin: 12vw 0;
 
     ul {
       list-style: none;
@@ -55,6 +65,11 @@ nav {
 
 .linkActive {
   color: var(--yellow);
+}
+
+#divbuttoncv {
+  margin-bottom: 3vw;
+  font-size: 4vw;
 }
 
 @keyframes fadein {

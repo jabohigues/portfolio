@@ -8,13 +8,16 @@
   color: var(--yellow);
   border: 1px solid var(--yellow);
   border-radius: 50%;
+  transition: all 0.3s;
 
   &:hover {
     background-color: var(--yellow);
     color: var(--black);
     border: 1px solid var(--black);
     cursor: pointer;
+    transform: scale(1.2);
   }
+
   mat-icon {
     font-size: 1.5rem;
     padding: 1vw;
