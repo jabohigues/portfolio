@@ -83,6 +83,7 @@ mat-card-content {
         // margin: 2vw;
         // margin-bottom: 0;
         border-radius: 1vw;
+        transition: all 0.3s;
 
         &:hover {
           background-color: var(--yellow);
