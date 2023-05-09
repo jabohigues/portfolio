@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-buttoncv',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buttoncv.component.scss']
 })
 export class ButtoncvComponent implements OnInit {
+  @Input() isHome: boolean = false;
 
   constructor() { }
 

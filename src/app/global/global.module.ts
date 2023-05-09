@@ -38,6 +38,7 @@ import { ButtoncvComponent } from './components/buttoncv/buttoncv.component';
     FooterComponent,
     ButtonToTopComponent,
     SocialmediaComponent,
+    ButtoncvComponent
   ],
 })
 export class GlobalModule {}

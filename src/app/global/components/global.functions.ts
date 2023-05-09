@@ -70,7 +70,7 @@ export class GlobalFunctions {
         if (GlobalVariables.firstClickLink && scrollY <= 10) {
           GlobalVariables.firstClickLink = !GlobalVariables.firstClickLink;
           this.scrollIfFormContact(href, top);
-        } else {
+        } else {          
           href != 'formContact'
             ? window.scrollTo({ top: top - 50, behavior: 'smooth' })
             : window.scrollTo({ top: top - 70, behavior: 'smooth' });
@@ -84,7 +84,7 @@ export class GlobalFunctions {
 
   public static scrollIfFormContact(href: string, top: number) {
     href != 'formContact'
-      ? window.scrollTo({ top: top, behavior: 'smooth' })
-      : window.scrollTo({ top: top - 20, behavior: 'smooth' });
+      ? window.scrollTo({ top: top + 10, behavior: 'smooth' })
+      : window.scrollTo({ top: top - 5, behavior: 'smooth' });
   }
 }
