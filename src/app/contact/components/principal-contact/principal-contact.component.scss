@@ -37,22 +37,28 @@ button {
   margin-bottom: 2vw;
 
   &.validForm {
-    background-color: var(--yellow);
-    color: var(--black);
+    background-color: var(--green);
+    color: var(--white);
     padding: 2vw 4vw;
     font-size: 4vw;
     border-radius: 2vw;
-    border: 2px solid var(--yellow);
+    border: 1px solid var(--green);
     cursor: pointer;
+
+    &:hover{
+      background-color: var(--yellow);
+      border: 1px solid var(--yellow);
+      color: var(--black);
+    }
   }
 
   &.invalidForm {
     background-color: var(--grey);
-    color: var(--black);
+    color: var(--white);
     padding: 2vw 4vw;
     font-size: 4vw;
     border-radius: 2vw;
-    border: 2px solid var(--grey);
+    border: 1px solid var(--grey);
   }
 }
 

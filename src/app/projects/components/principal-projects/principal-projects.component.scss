@@ -57,7 +57,8 @@ mat-card-content {
     }
   }
   p {
-    text-align: justify;
+    word-wrap: break-word;
+
 
     &.tags {
       display: flex;
@@ -75,15 +76,16 @@ mat-card-content {
       justify-content: flex-end;
       align-items: center;
       gap: 2vw;
+      
       a {
+        text-align: center;
         text-decoration: none;
         color: var(--white);
         border: 1px solid var(--yellow);
         padding: 1vw 2vw;
-        // margin: 2vw;
-        // margin-bottom: 0;
         border-radius: 1vw;
         transition: all 0.3s;
+        width: 18vw;
 
         &:hover {
           background-color: var(--yellow);

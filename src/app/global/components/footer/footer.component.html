@@ -1,6 +1,63 @@
 <footer id="footer">
-  <div>
-    <p>¡Gracias por su visita!</p>
-    <app-socialmedia></app-socialmedia>
-  </div>
+  <div id="separatordiv">
+      <img
+        src="/assets/images/logo.webp"
+        alt="logo"
+      />
+      <div class="navContent">
+        <ul>
+          <li>
+            <span id="homelink" class="home" (click)="scrollIntoPage('home')"
+              >Inicio</span
+            >
+          </li>
+          <li>
+            <span
+              id="divProjectslink"
+              class="projects"
+              (click)="scrollIntoPage('divProjects')"
+              >Proyectos</span
+            >
+          </li>
+          <li>
+            <span
+              id="divHabilitieslink"
+              class="habilities"
+              (click)="scrollIntoPage('divHabilities')"
+              >Habilidades</span
+            >
+          </li>
+          <li>
+            <span
+              id="divTecnologieslink"
+              class="tecnologies"
+              (click)="scrollIntoPage('divTecnologies')"
+              >Tecnologías</span
+            >
+          </li>
+          <li>
+            <span
+              id="aboutSectionlink"
+              class="about"
+              (click)="scrollIntoPage('aboutSection')"
+              >Sobre mí</span
+            >
+          </li>
+          <li>
+            <span
+              id="formContactlink"
+              class="contact"
+              (click)="scrollIntoPage('formContact')"
+              >Contáctame</span
+            >
+          </li>
+        </ul>
+      </div>
+      <div id="divbuttoncv">
+        <app-buttoncv></app-buttoncv>
+      </div>
+      <div id="divsocialmedia">
+        <app-socialmedia [isMenu]="true"></app-socialmedia>
+      </div>
+    </div>
 </footer>

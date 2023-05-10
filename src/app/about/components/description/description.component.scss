@@ -1,5 +1,21 @@
+div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 70vw;
+}
+
 p {
+  word-wrap: break-word;
   font-size: 4vw;
-  max-width: 90%;
-  margin: 1.5vw auto;
+  margin: 1vw 0;
+ 
+  &:first-child{
+    margin-top: 5vw;
+  }
+
+  &:last-child{
+    margin-bottom: 5vw;
+  }
 }
