@@ -43,7 +43,8 @@ export class GlobalFunctions {
   public static toggleMenu() {
     let divBack = document.getElementById('divBack');
     divBack!.classList.toggle('active');
-    let nav = document.getElementById('nav');
+
+    let nav = document.querySelectorAll('.nav:not(.hiddenNav)')[0];
     nav!.classList.toggle('active');
     nav!.classList.toggle('notactive');
 

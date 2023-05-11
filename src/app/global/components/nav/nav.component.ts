@@ -1,5 +1,6 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { GlobalFunctions } from '../global.functions';
+import { GlobalVariables } from '../global.variables';
 
 @Component({
   selector: 'app-nav',
@@ -7,13 +8,15 @@ import { GlobalFunctions } from '../global.functions';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
+  @Input() hiddenNav: boolean = false;
+  
   //Activate link menu when do scroll
   @HostListener('window:scroll', []) onWindowScroll() {
     this.activateLinkInScroll();
   }
 
   constructor() {}
-
+  
   ngOnInit(): void {
     this.activateLinkInScroll();
   }

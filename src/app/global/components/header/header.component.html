@@ -5,6 +5,7 @@
       alt="logo"
       (click)="scrollIntoPage('home')"
     />
+    <app-nav [hiddenNav]="hiddenMobile.ismobile && hiddenWeb.hidden"></app-nav>
     <button id="iconMenu" (click)="toggleMenu()">
       <div></div>
       <div></div>

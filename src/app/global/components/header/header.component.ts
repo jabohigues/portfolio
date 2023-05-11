@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { GlobalFunctions } from '../global.functions';
+import { GlobalVariables } from '../global.variables';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,9 @@ import { GlobalFunctions } from '../global.functions';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  hiddenWeb = GlobalVariables.hiddenWeb;
+  hiddenMobile = GlobalVariables.hiddenMobile;
+  
   // Fixed menu on top when do scroll
   @HostListener('window:scroll', ['$event.target'])
   scroll(e: any) {

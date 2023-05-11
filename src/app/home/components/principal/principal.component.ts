@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { GlobalVariables } from 'src/app/global/components/global.variables';
 
 @Component({
   selector: 'app-principal',
@@ -6,16 +7,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal.component.scss'],
 })
 export class PrincipalComponent implements OnInit {
+  hiddenWeb = GlobalVariables.hiddenWeb;
+  hiddenMobile = GlobalVariables.hiddenMobile;
+  
+  @HostListener('window:resize', []) onWindowResize() {
+    this.getScreenSize()
+  }
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getScreenSize();
+  }
+
+  getScreenSize(){
+    console.log(screen.width);
+    if (screen.width >= 500) {
+      GlobalVariables.hiddenWeb.isweb = true;
+      GlobalVariables.hiddenWeb.hidden = false;
+      GlobalVariables.hiddenMobile.ismobile = false;
+      GlobalVariables.hiddenMobile.hidden = true;
+    } else {
+      GlobalVariables.hiddenWeb.isweb = false;
+      GlobalVariables.hiddenWeb.hidden = true;
+      GlobalVariables.hiddenMobile.ismobile = true;
+      GlobalVariables.hiddenMobile.hidden = false;
+    }
+    console.log(GlobalVariables.hiddenWeb, GlobalVariables.hiddenMobile);
+  }
 
   // Show or hide nav and divBack
   toggleMenu() {
     let divBack = document.getElementById('divBack');
     divBack!.classList.toggle('active');
 
-    let nav = document.getElementById('nav');
+    let nav = document.querySelectorAll('.nav:not(.hiddenNav)')[0];
     nav!.classList.toggle('active');
     nav!.classList.toggle('notactive');
 
@@ -25,5 +51,7 @@ export class PrincipalComponent implements OnInit {
     setTimeout(() => {
       nav?.classList.toggle('normal');
     }, 200);
+
+    GlobalVariables.menuActive = false;
   }
 }

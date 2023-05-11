@@ -2,7 +2,7 @@
 
 <main>
   <div id="divBack" (click)="toggleMenu()"></div>
-  <app-nav></app-nav>
+  <app-nav [hiddenNav]="hiddenWeb.isweb && hiddenMobile.hidden"></app-nav>
   <section id="home">
     <article>
       <app-welcome></app-welcome>
