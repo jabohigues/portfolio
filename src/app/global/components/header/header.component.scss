@@ -29,7 +29,7 @@ header {
 
 // Mobile
 @media only screen and (max-device-width: 500px) {
-  .navScroll {
+  .toolbarScroll {
     background-color: var(--yellow);
     color: var(--black);
     position: sticky;
@@ -91,5 +91,11 @@ header {
   // button menu
   #iconMenu {
     display: none;
+  }
+
+  .toolbarScroll {
+    backdrop-filter: blur(90px);
+    color: var(--black);
+    display: block;
   }
 }

@@ -19,10 +19,10 @@ export class HeaderComponent implements OnInit {
     let iconMenu = document.getElementById('iconMenu');
 
     if (scroll >= 30) {
-      toolbar!.classList.add('navScroll');
+      toolbar!.classList.add('toolbarScroll');
       iconMenu!.classList.add('iconMenuScroll');
     } else {
-      toolbar!.classList.remove('navScroll');
+      toolbar!.classList.remove('toolbarScroll');
       iconMenu!.classList.remove('iconMenuScroll');
     }
   }
