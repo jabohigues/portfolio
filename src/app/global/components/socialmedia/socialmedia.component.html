@@ -7,7 +7,7 @@
     <img
       src="assets/images/socialMedia/github{{ svggithub }}.svg"
       alt="github"
-      [ngClass]="isMenu ? 'ismenu' : ''"
+      [ngClass]="[whiteImages ? 'whiteimages' : '', homeImages ? 'homeimages' : '']"
     />
   </a>
   <a
@@ -18,7 +18,7 @@
     <img
       src="assets/images/socialMedia/linkedin{{ svglinkedin }}.svg"
       alt="linkedin"
-      [ngClass]="isMenu ? 'ismenu' : ''"
+      [ngClass]="[whiteImages ? 'whiteimages' : '', homeImages ? 'homeimages' : '']"
     />
   </a>
 </div>

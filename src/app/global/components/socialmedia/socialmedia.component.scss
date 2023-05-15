@@ -10,24 +10,26 @@ img {
 
 // Mobile
 @media only screen and (max-device-width: 500px) {
-  img {
+  img.whiteimages {
     width: 7vw;
-
-    &.ismenu {
-      width: 8vw;
-      margin: 0 2vw;
-    }
   }
 }
 
 // Web
 @media only screen and (min-device-width: 500px) {
-  img {
-    width: 7vw;
-
-    &.ismenu {
-      width: 2vw;
-      margin: 0 0.3vw;
+  img{
+    &.whiteimages {
+      width: 2.5vw;
+      margin-top: 0.5vw;
+  
+      &:first-child {
+        margin-right: 0.2vw;
+      }
+    }
+  
+    &.homeimages {
+      width: 3.5vw;
     }
   }
+
 }

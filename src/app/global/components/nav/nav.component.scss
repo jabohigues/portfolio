@@ -114,6 +114,10 @@
           &:last-child{
             margin-right: 3vw;
           }
+
+          &:hover {
+            color: var(--red);
+          }
         }
       }
       img {

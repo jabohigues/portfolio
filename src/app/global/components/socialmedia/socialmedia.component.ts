@@ -6,16 +6,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./socialmedia.component.scss'],
 })
 export class SocialmediaComponent implements OnInit {
-  @Input() isMenu: boolean = false;
+  @Input() whiteImages: boolean = false;
+  @Input() homeImages: boolean = false;
+
   svglinkedin: string = '';
   svggithub: string = '';
 
   constructor() {}
 
   ngOnInit(): void {
-    if (this.isMenu) {
-      this.svggithub = '_menu';
-      this.svglinkedin = '_menu';
+    console.log(this.whiteImages, this.homeImages);
+    
+    if (this.whiteImages) {
+      this.svggithub = '_white';
+      this.svglinkedin = '_white';
     }
   }
 }

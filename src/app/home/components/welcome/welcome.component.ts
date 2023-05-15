@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-welcome',
@@ -6,16 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  @Input() isMenu: boolean = true;
+  whiteImages: boolean = true;
   svglinkedin: string = '';
   svggithub: string = '';
 
   constructor() {}
 
   ngOnInit(): void {
-    if (this.isMenu) {
-      this.svggithub = '_menu';
-      this.svglinkedin = '_menu';
+    if (this.whiteImages) {
+      this.svggithub = '_white';
+      this.svglinkedin = '_white';
     }
   }
 }

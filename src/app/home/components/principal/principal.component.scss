@@ -33,3 +33,34 @@ main {
     opacity: 0.5;
   }
 }
+
+
+
+// Mobile
+@media only screen and (max-device-width: 500px) {
+  #divBack.active {
+    display: block;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.5;
+  }
+}
+
+
+// Web
+@media only screen and (min-device-width: 500px) {
+  article {
+    padding-top: 4vw !important;
+    flex-direction: row !important;
+    align-items: normal !important;
+
+    img {
+      width: 20vw !important;
+    }
+  }
+}
