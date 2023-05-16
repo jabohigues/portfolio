@@ -123,3 +123,76 @@ button {
 ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
   color: red !important;
 }
+
+
+// Web
+@media only screen and (min-device-width: 500px) {
+  #formContact {
+    display: block;
+    width: 60vw;
+    max-width: none;
+    padding: 1vw;
+    border-radius: 1vw;
+  
+    h1 {
+      text-align: center;
+      font-size: 3vw;
+      margin: 1vw;
+      margin-bottom: 3vw;
+    }
+
+    #fields{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 2vw;
+      width: 100%;
+
+      #first,
+      #second{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        textarea{
+          width: 100%;
+          height: 8vw;
+        }
+      }
+    }
+  }
+  
+  mat-form-field {
+    font-size: 1.2vw !important;
+    margin-bottom: 1vw;
+  }
+  
+  .icon {
+    span {
+      font-size: 1.2em;
+    }
+  }
+  
+  //Button submit
+  button {
+    &.validForm {
+      padding: 1vw 2vw;
+      font-size: 1.5vw;
+      border-radius: 0.5vw;
+    }
+  
+    &.invalidForm {
+      padding: 1vw 2vw;
+      font-size: 1.5vw;
+      border-radius: 0.5vw;
+    }
+  }
+  
+
+
+
+}
+

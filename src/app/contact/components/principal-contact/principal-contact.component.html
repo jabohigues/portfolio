@@ -6,116 +6,123 @@
 >
   <h1>Contáctame</h1>
 
-  <!-- Name -->
-  <mat-form-field
-    hideRequiredMarker
-    appearance="outline"
-    class="{{ isCorrect['name'] ? 'inputCorrect' : '' }}"
-  >
-    <mat-label>Nombre completo</mat-label>
-    <input
-      name="name"
-      matInput
-      placeholder="Escriba su nombre"
-      required
-      formControlName="name"
-      (keyup)="checkIsCorrect('name')"
-    />
-    <mat-error
-      *ngIf="
-        contactForm.controls['name'].invalid &&
-        (contactForm.controls['name'].dirty ||
-          contactForm.controls['name'].touched)
-      "
-    >
-      <span *ngIf="contactForm.controls['name'].hasError('required')">
-        Debes poner un nombre
-      </span>
-    </mat-error>
-  </mat-form-field>
-
-  <!-- Email -->
-  <mat-form-field
-    class="{{ isCorrect['email'] ? 'inputCorrect' : '' }}"
-    hideRequiredMarker
-    appearance="outline"
-  >
-    <mat-label>Correo electrónico</mat-label>
-    <div class="icon">
-      <input
-        name="email"
-        matInput
-        placeholder="user@example.com"
-        required
-        formControlName="email"
-        (keyup)="checkIsCorrect('email')"
-      />
-      <span class="material-icons"> mail </span>
+  <div id="fields">
+    <div id="first">
+      <!-- Name -->
+      <mat-form-field
+        hideRequiredMarker
+        appearance="outline"
+        class="{{ isCorrect['name'] ? 'inputCorrect' : '' }}"
+      >
+        <mat-label>Nombre completo</mat-label>
+        <input
+          name="name"
+          matInput
+          placeholder="Escriba su nombre"
+          required
+          formControlName="name"
+          (keyup)="checkIsCorrect('name')"
+        />
+        <mat-error
+          *ngIf="
+            contactForm.controls['name'].invalid &&
+            (contactForm.controls['name'].dirty ||
+              contactForm.controls['name'].touched)
+          "
+        >
+          <span *ngIf="contactForm.controls['name'].hasError('required')">
+            Debes poner un nombre
+          </span>
+        </mat-error>
+      </mat-form-field>
+    
+      <!-- Email -->
+      <mat-form-field
+        class="{{ isCorrect['email'] ? 'inputCorrect' : '' }}"
+        hideRequiredMarker
+        appearance="outline"
+      >
+        <mat-label>Correo electrónico</mat-label>
+        <div class="icon">
+          <input
+            name="email"
+            matInput
+            placeholder="user@example.com"
+            required
+            formControlName="email"
+            (keyup)="checkIsCorrect('email')"
+          />
+          <span class="material-icons"> mail </span>
+        </div>
+        <mat-error
+          *ngIf="
+            contactForm.controls['email'].invalid &&
+            (contactForm.controls['email'].dirty ||
+              contactForm.controls['email'].touched)
+          "
+        >
+          <span *ngIf="contactForm.controls['email'].hasError('required')">
+            Debes poner un correo electrónico
+          </span>
+          <span *ngIf="contactForm.controls['email'].hasError('email')">
+            Introduce un correo válido
+          </span>
+        </mat-error>
+      </mat-form-field>
+    
+      <!-- Phone -->
+      <mat-form-field appearance="outline">
+        <mat-label>Teléfono (opcional)</mat-label>
+        <div class="icon">
+          <input name="phone" type="number" matInput formControlName="phone" />
+          <span class="material-icons"> phone </span>
+        </div>
+      </mat-form-field>
     </div>
-    <mat-error
-      *ngIf="
-        contactForm.controls['email'].invalid &&
-        (contactForm.controls['email'].dirty ||
-          contactForm.controls['email'].touched)
-      "
-    >
-      <span *ngIf="contactForm.controls['email'].hasError('required')">
-        Debes poner un correo electrónico
-      </span>
-      <span *ngIf="contactForm.controls['email'].hasError('email')">
-        Introduce un correo válido
-      </span>
-    </mat-error>
-  </mat-form-field>
-
-  <!-- Phone -->
-  <mat-form-field appearance="outline">
-    <mat-label>Teléfono (opcional)</mat-label>
-    <div class="icon">
-      <input name="phone" type="number" matInput formControlName="phone" />
-      <span class="material-icons"> phone </span>
+  
+    <div id="second">
+      <!-- Message -->
+      <mat-form-field
+        class="textarea"
+        class="{{ isCorrect['message'] ? 'inputCorrect' : '' }}"
+        hideRequiredMarker
+        appearance="outline"
+      >
+        <mat-label>Mensaje</mat-label>
+        <textarea
+          name="message"
+          matInput
+          #input
+          required
+          formControlName="message"
+          maxlength="500"
+          (keyup)="checkIsCorrect('message')"
+        >
+        </textarea>
+        <mat-hint align="end">{{ input.value.length }}/500</mat-hint>
+        <mat-error
+          *ngIf="
+            contactForm.controls['message'].invalid &&
+            (contactForm.controls['message'].dirty ||
+              contactForm.controls['message'].touched)
+          "
+        >
+          <span *ngIf="contactForm.controls['message'].hasError('required')">
+            Debes poner un mensaje
+          </span>
+          <span *ngIf="contactForm.controls['message'].hasError('maxlength')">
+            Lo siento, el máximo es de 500 caracteres.
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <button
+        type="submit"
+        [disabled]="contactForm.invalid"
+        class="{{ contactForm.invalid ? 'invalidForm' : 'validForm' }}"
+        mat-raised-button
+      >
+        Enviar mensaje
+      </button>
     </div>
-  </mat-form-field>
-
-  <!-- Message -->
-  <mat-form-field
-    class="{{ isCorrect['message'] ? 'inputCorrect' : '' }}"
-    hideRequiredMarker
-    appearance="outline"
-  >
-    <mat-label>Mensaje</mat-label>
-    <textarea
-      name="message"
-      matInput
-      #input
-      required
-      formControlName="message"
-      maxlength="500"
-      (keyup)="checkIsCorrect('message')"
-    >
-    </textarea>
-    <mat-hint align="end">{{ input.value.length }}/500</mat-hint>
-    <mat-error
-      *ngIf="
-        contactForm.controls['message'].invalid &&
-        (contactForm.controls['message'].dirty ||
-          contactForm.controls['message'].touched)
-      "
-    >
-      <span *ngIf="contactForm.controls['message'].hasError('required')">
-        Debes poner un mensaje
-      </span>
-      <span *ngIf="contactForm.controls['message'].hasError('maxlength')">
-        Lo siento, el máximo es de 500 caracteres.
-      </span>
-    </mat-error>
-  </mat-form-field>
-  <button
-    type="submit"
-    [disabled]="contactForm.invalid"
-    class="{{ contactForm.invalid ? 'invalidForm' : 'validForm' }}"
-    mat-raised-button
-  >
-    Enviar mensaje
-  </button>
+  </div>
 </form>
