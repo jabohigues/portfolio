@@ -19,7 +19,6 @@
   .imageCard {
     display: grid;
     place-items: center;
-    height: 20vw;
   }
 
   img {
@@ -46,4 +45,35 @@ mat-card {
 
 mat-card-content {
   font-size: 3.5vw;
+}
+
+// Mobile
+@media only screen and (max-device-width: 500px) {
+  .imageCard {
+    min-height: 20vw;
+  }
+}
+
+// Web
+@media only screen and (min-device-width: 500px) {
+  #divTecnologies {
+    h1 {
+      font-size: 3vw;
+    }
+  }
+  
+  #tecnologies {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2vw;
+
+    img {
+      max-width: none;
+      width: 5vw;
+      margin: 0;
+    }
+  }
+  
+  mat-card-content {
+    display: none;
+  }
 }

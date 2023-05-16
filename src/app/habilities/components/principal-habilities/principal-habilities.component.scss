@@ -51,9 +51,6 @@ mat-card-content {
 @media only screen and (max-device-width: 500px) {
   .imageCard {
     min-height: 20vw;
-    img[matTooltip] {
-      display: none;
-    }
   }
 }
 
@@ -79,6 +76,4 @@ mat-card-content {
   mat-card-content {
     display: none;
   }
-  
-
 }
