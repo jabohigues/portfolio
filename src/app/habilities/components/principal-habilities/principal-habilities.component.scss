@@ -19,7 +19,6 @@
   .imageCard {
     display: grid;
     place-items: center;
-    min-height: 20vw;
   }
 
   img {
@@ -46,4 +45,40 @@ mat-card {
 
 mat-card-content {
   font-size: 3.5vw;
+}
+
+// Mobile
+@media only screen and (max-device-width: 500px) {
+  .imageCard {
+    min-height: 20vw;
+    img[matTooltip] {
+      display: none;
+    }
+  }
+}
+
+// Web
+@media only screen and (min-device-width: 500px) {
+  #divHabilities {
+    h1 {
+      font-size: 3vw;
+    }
+  }
+  
+  #habilities {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2vw;
+
+    img {
+      max-width: none;
+      width: 5vw;
+      margin: 0;
+    }
+  }
+  
+  mat-card-content {
+    display: none;
+  }
+  
+
 }
