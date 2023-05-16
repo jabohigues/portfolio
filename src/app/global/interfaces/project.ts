@@ -1,3 +1,5 @@
+import { Habilitie } from "./habilitie";
+
 export interface Project {
   id: number;
   title: string;
@@ -6,7 +8,7 @@ export interface Project {
   description: string;
   caller: string;
   category: string;
-  tags: string[];
+  tags: Habilitie[];
   hrefs: {
     github: string;
     project: string;
