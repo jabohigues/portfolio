@@ -5,7 +5,8 @@ a {
   color: var(--yellow);
   padding: 1vw 2vw;
   border-radius: 1vw;
-
+  transition: all 0.3s;
+  
   &.buttonMenu{
     font-size: 3vw;
   }
@@ -14,6 +15,7 @@ a {
     border: 1px solid var(--black);
     background-color: var(--yellow);
     color: var(--black);
+    transition: all 0.3s;
   }
 }
 
