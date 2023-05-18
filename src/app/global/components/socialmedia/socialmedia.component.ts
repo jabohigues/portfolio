@@ -15,8 +15,6 @@ export class SocialmediaComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.whiteImages, this.homeImages);
-    
     if (this.whiteImages) {
       this.svggithub = '_white';
       this.svglinkedin = '_white';

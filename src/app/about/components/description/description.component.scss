@@ -10,6 +10,10 @@ p {
   word-wrap: break-word;
   font-size: 4vw;
   margin: 1vw 0;
+
+  span{
+    color: var(--yellow);
+  }
  
   &:first-child{
     margin-top: 5vw;

@@ -66,14 +66,14 @@ button {
 
 // Border color of input (normal)
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: var(--yellow) !important;
+  color: var(--grey) !important;
 }
 
 // Border color of input (focused)
 ::ng-deep
   .mat-form-field-appearance-outline.mat-focused
   .mat-form-field-outline-thick {
-  color: var(--grey) !important;
+  color: var(--yellow) !important;
 }
 
 // Border color of input (correct)
@@ -109,7 +109,7 @@ button {
 
 // Color of label (focused)
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: var(--grey) !important;
+  color: var(--yellow) !important;
 }
 
 // Border color of input (correct)

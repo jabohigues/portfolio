@@ -21,7 +21,6 @@ export class PrincipalComponent implements OnInit {
   }
 
   getScreenSize(){
-    console.log(screen.width);
     if (screen.width >= 500) {
       GlobalVariables.hiddenWeb.isweb = true;
       GlobalVariables.hiddenWeb.hidden = false;
@@ -33,7 +32,6 @@ export class PrincipalComponent implements OnInit {
       GlobalVariables.hiddenMobile.ismobile = true;
       GlobalVariables.hiddenMobile.hidden = false;
     }
-    console.log(GlobalVariables.hiddenWeb, GlobalVariables.hiddenMobile);
   }
 
   // Show or hide nav and divBack
