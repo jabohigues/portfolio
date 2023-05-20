@@ -1,8 +1,8 @@
 <form
-  #formContact="ngForm"
-  [formGroup]="contactForm"
   id="formContact"
-  (ngSubmit)="onSubmit(contactForm.value, formContact)"
+  #formDirective="ngForm"
+  [formGroup]="contactForm"
+  (ngSubmit)="submitForm(formDirective)"
 >
   <h1>Contáctame</h1>
 
@@ -12,7 +12,7 @@
       <mat-form-field
         hideRequiredMarker
         appearance="outline"
-        class="{{ isCorrect['name'] ? 'inputCorrect' : '' }}"
+        class="{{ isValid['name'] ? 'inputCorrect' : '' }}"
       >
         <mat-label>Nombre completo</mat-label>
         <input
@@ -38,7 +38,7 @@
     
       <!-- Email -->
       <mat-form-field
-        class="{{ isCorrect['email'] ? 'inputCorrect' : '' }}"
+        class="{{ isValid['email'] ? 'inputCorrect' : '' }}"
         hideRequiredMarker
         appearance="outline"
       >
@@ -84,7 +84,7 @@
       <!-- Message -->
       <mat-form-field
         class="textarea"
-        class="{{ isCorrect['message'] ? 'inputCorrect' : '' }}"
+        class="{{ isValid['message'] ? 'inputCorrect' : '' }}"
         hideRequiredMarker
         appearance="outline"
       >

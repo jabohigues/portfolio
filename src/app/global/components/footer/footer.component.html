@@ -1,63 +1,57 @@
-<footer id="footer">
-  <div id="separatordiv">
-      <img
-        src="/assets/images/logo.webp"
-        alt="logo"
-      />
-      <div class="navContent">
-        <ul>
-          <li>
-            <span id="homelink" class="home" (click)="scrollIntoPage('home')"
-              >Inicio</span
-            >
-          </li>
-          <li>
-            <span
-              id="divProjectslink"
-              class="projects"
-              (click)="scrollIntoPage('divProjects')"
-              >Proyectos</span
-            >
-          </li>
-          <li>
-            <span
-              id="divHabilitieslink"
-              class="habilities"
-              (click)="scrollIntoPage('divHabilities')"
-              >Habilidades</span
-            >
-          </li>
-          <li>
-            <span
-              id="divTecnologieslink"
-              class="tecnologies"
-              (click)="scrollIntoPage('divTecnologies')"
-              >Tecnologías</span
-            >
-          </li>
-          <li>
-            <span
-              id="aboutSectionlink"
-              class="about"
-              (click)="scrollIntoPage('aboutSection')"
-              >Sobre mí</span
-            >
-          </li>
-          <li>
-            <span
-              id="formContactlink"
-              class="contact"
-              (click)="scrollIntoPage('formContact')"
-              >Contáctame</span
-            >
-          </li>
-        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                                        HAY QUE ARREGLAR EL FOOTER Y EL FORM EN MOBIL !!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<footer>
+  <div id="separatorfooter">
+    <div id="firstfooter">
+      <h1>Contacto</h1>
+      <p><span class="material-icons"> phone </span>637332194</p>
+      <p><span class="material-icons"> mail </span>jbohigues.depweb@gmail.com</p>
+    </div>
+    <div id="secondfooter">
+      <h1>Enlaces</h1>
+      <div id="divsocialmedia">
+        <app-socialmedia [whiteImages]="true"></app-socialmedia>
       </div>
       <div id="divbuttoncv">
         <app-buttoncv></app-buttoncv>
       </div>
-      <div id="divsocialmedia">
-        <app-socialmedia [whiteImages]="true"></app-socialmedia>
-      </div>
     </div>
+  </div>
+  <p>2023 · Juan Bohigues · Front-end Developer</p>
 </footer>

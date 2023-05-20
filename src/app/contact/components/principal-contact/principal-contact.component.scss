@@ -1,24 +1,43 @@
 #formContact {
-  width: 70vw;
-  max-width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 2vw;
-  border-radius: 2vw;
+  display: block;
+  width: 60vw;
+  max-width: none;
+  padding: 1vw;
+  border-radius: 1vw;
   color: var(--black);
   background-color: var(--white);
 
   h1 {
-    font-size: 7vw;
-    margin: 2vw;
-    margin-bottom: 7vw;
+    text-align: center;
+    font-size: 5vw;
+    margin: 3vw auto;
+  }
+
+  #fields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+    width: 100%;
+
+    #first,
+    #second{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      textarea{
+        width: 100%;
+        height: 8vw;
+      }
+    }
   }
 }
 
 mat-form-field {
-  font-size: 4vw !important;
   width: 80%;
   margin-bottom: 2vw;
 }
@@ -112,7 +131,7 @@ button {
   color: var(--yellow) !important;
 }
 
-// Border color of input (correct)
+// Color of label (correct)
 ::ng-deep
   .mat-form-field-appearance-outline.inputCorrect
   .mat-form-field-label {
@@ -124,6 +143,16 @@ button {
   color: red !important;
 }
 
+// Color of SnackBar
+::ng-deep .snackbarclass{
+  background: var(--yellow);
+  color: var(--black);
+}
+
+// Color of SnackBar's button
+::ng-deep .mat-button-wrapper{
+  color: var(--black);
+}
 
 // Web
 @media only screen and (min-device-width: 500px) {
@@ -190,9 +219,5 @@ button {
       border-radius: 0.5vw;
     }
   }
-  
-
-
-
 }
 

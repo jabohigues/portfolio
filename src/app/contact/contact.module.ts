@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailServiceService } from './services/email-service.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [PrincipalContactComponent],
@@ -15,6 +16,7 @@ import { EmailServiceService } from './services/email-service.service';
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [EmailServiceService],
   exports: [PrincipalContactComponent],
