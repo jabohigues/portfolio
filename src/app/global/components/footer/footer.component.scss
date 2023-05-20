@@ -1,111 +1,127 @@
-footer{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+hr {
+  border: 1px solid var(--yellow);
+  width: 70vw;
+}
 
-  #separatordiv {
+p{
+  text-align: center;
+  font-size: 3.5vw;
+
+  &#final{
+    padding: 5vw 0;
+    font-size: 3vw;
+  }
+}
+
+footer{
+  margin: 0 auto;
+  color: var(--white);
+
+  #separatorfooter{
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 3vw;
+    gap: 3vw;
+  }
 
-    img{
-      width: 20vw;
-    }
-    .navContent {
-      color: var(--grey);
-      font-size: 5vw;
+  h1{
+    color: var(--yellow);  
+    margin-bottom: 1vw;
+    font-size: 5vw;
+  }
+
+  #firstfooter{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 60vw;
+
+    p {
+      margin: 0.5vw 0;
       display: flex;
+      justify-content: center;
       align-items: center;
-      flex-direction: column;
-      text-align: center;
-  
-      ul {
-        list-style: none;
-        padding: 0;
-  
-        li {
-          margin: 4vw 0;
-  
-          &:hover {
-            color: var(--yellow);
-            cursor: pointer;
-          }
-        }
+
+      span{
+        margin-right: 1vw;
       }
     }
+  }
 
-    #divbuttoncv {
-      font-size: 4vw;
-    }
+  #secondfooter{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 60vw;
+    margin-bottom: 5vw;
 
-    #divsocialmedia{
-      margin-top: 5vw;
-      margin-bottom: 10vw;
+    #separatorsecondfooter{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 3vw;
     }
+  }
+
+  #divbuttoncv {
+    font-size: 3vw;
+  }
+
+  #divsocialmedia{
+    margin-top: 0.6vw;
   }
 }
 
 // Web
 @media only screen and (min-device-width: 500px) {
-  hr {
-    border: 1px solid var(--yellow);
-    width: 70vw;
-  }
-
-  p{
-    text-align: center;
-  }
-
   footer{
-    margin: 0 auto;
-    color: var(--white);
-
     #separatorfooter{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: row;
       margin-bottom: 3vw;
-      gap: 10vw;
-    }
-
-    h1{
-      color: var(--yellow);  
+      gap: 15vw;
     }
 
     #firstfooter{
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
+      min-width: 0;
+      margin: 0;
+    }
 
-      p {
-        margin: 0.5vw 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        span{
-          margin-right: 1vw;
-        }
+    p{
+      font-size: 1.5vw;
+      &#final{
+        font-size: 1.2vw;
+        padding: 3vw 0;
       }
+    }
 
+    h1{
+      font-size: 2.5vw;
     }
 
     #secondfooter{
-      display: flex;
-      align-items: center;
       justify-content: center;
       flex-direction: column;
+      min-width: 0;
+      margin: 0;
+
+      #separatorsecondfooter{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1vw;
+      }
     }
 
     #divbuttoncv {
       font-size: 1.2vw;
-      margin-top: .5vw;
+      margin: 0;
     }
 
     #divsocialmedia{
       margin: 0;
     }
   }
-
 }
