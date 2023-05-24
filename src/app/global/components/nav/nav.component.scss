@@ -46,33 +46,33 @@
     width: 50vw;
     border-radius: 0 2vw 2vw 0;
     background-color: var(--black);
-  
+
     &.normal {
       opacity: 0;
       z-index: -1;
     }
-  
+
     &.active {
       opacity: 1;
       z-index: 3;
       animation: fadein 0.2s ease-in, appear 0.3s ease-in;
     }
-  
+
     &.notactive {
       animation: desappear 0.3s ease-out, desappearZIndex 0.3s ease-out;
     }
-  
+
     #separatordiv {
       flex-direction: column;
     }
-  
+
     .navContent {
       font-size: 5vw;
       display: flex;
       align-items: center;
       flex-direction: column;
       margin: 12vw 0;
-  
+
       li {
         margin: 4vw 0;
       }
@@ -81,37 +81,78 @@
       }
     }
   }
-  
+
   #divbuttoncv {
     margin-bottom: 3vw;
     font-size: 4vw;
   }
 }
 
-// Web
-@media only screen and (min-device-width: 500px) {
+// Mobile - Web
+@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
   nav {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-  
+
     #separatordiv {
       flex-direction: row;
     }
-  
+
     .navContent {
-      font-size: 1.2vw;
-  
+      font-size: 1.6vw !important;
+
       ul {
         display: flex;
         align-items: center;
         flex-direction: row;
-  
+
         li {
           margin: 0 1vw;
 
-          &:last-child{
+          &:last-child {
+            margin-right: 1.5vw !important;
+          }
+
+          &:hover {
+            color: var(--grey);
+          }
+        }
+      }
+    }
+  }
+
+  #divbuttoncv,
+  #socialmedia {
+    display: none;
+  }
+}
+
+// Web
+@media only screen and (min-device-width: 900px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    #separatordiv {
+      flex-direction: row;
+    }
+
+    .navContent {
+      font-size: 1.2vw;
+
+      ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        li {
+          margin: 0 1vw;
+
+          &:last-child {
             margin-right: 3vw;
           }
 
@@ -120,13 +161,10 @@
           }
         }
       }
-      img {
-        width: 1vw;
-      }
     }
   }
-  
-  #divbuttoncv, 
+
+  #divbuttoncv,
   #socialmedia {
     display: none;
   }

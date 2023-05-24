@@ -3,21 +3,21 @@ hr {
   width: 70vw;
 }
 
-p{
+p {
   text-align: center;
   font-size: 3.5vw;
 
-  &#final{
+  &#final {
     padding: 5vw 0;
     font-size: 3vw;
   }
 }
 
-footer{
+footer {
   margin: 0 auto;
   color: var(--white);
 
-  #separatorfooter{
+  #separatorfooter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,13 +26,13 @@ footer{
     gap: 3vw;
   }
 
-  h1{
-    color: var(--yellow);  
+  h1 {
+    color: var(--yellow);
     margin-bottom: 1vw;
     font-size: 5vw;
   }
 
-  #firstfooter{
+  #firstfooter {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -45,13 +45,13 @@ footer{
       justify-content: center;
       align-items: center;
 
-      span{
+      span {
         margin-right: 1vw;
       }
     }
   }
 
-  #secondfooter{
+  #secondfooter {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -59,7 +59,7 @@ footer{
     min-width: 60vw;
     margin-bottom: 5vw;
 
-    #separatorsecondfooter{
+    #separatorsecondfooter {
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -71,44 +71,44 @@ footer{
     font-size: 3vw;
   }
 
-  #divsocialmedia{
+  #divsocialmedia {
     margin-top: 0.6vw;
   }
 }
 
 // Web
-@media only screen and (min-device-width: 500px) {
-  footer{
-    #separatorfooter{
+@media only screen and (min-device-width: 900px) {
+  footer {
+    #separatorfooter {
       flex-direction: row;
       margin-bottom: 3vw;
       gap: 15vw;
     }
 
-    #firstfooter{
+    #firstfooter {
       min-width: 0;
       margin: 0;
     }
 
-    p{
+    p {
       font-size: 1.5vw;
-      &#final{
+      &#final {
         font-size: 1.2vw;
         padding: 3vw 0;
       }
     }
 
-    h1{
+    h1 {
       font-size: 2.5vw;
     }
 
-    #secondfooter{
+    #secondfooter {
       justify-content: center;
       flex-direction: column;
       min-width: 0;
       margin: 0;
 
-      #separatorsecondfooter{
+      #separatorsecondfooter {
         flex-direction: column;
         align-items: flex-start;
         gap: 1vw;
@@ -120,7 +120,7 @@ footer{
       margin: 0;
     }
 
-    #divsocialmedia{
+    #divsocialmedia {
       margin: 0;
     }
   }

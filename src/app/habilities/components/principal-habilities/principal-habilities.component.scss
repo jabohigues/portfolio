@@ -55,13 +55,13 @@ mat-card-content {
 }
 
 // Web
-@media only screen and (min-device-width: 500px) {
+@media only screen and (min-device-width: 900px) {
   #divHabilities {
     h1 {
       font-size: 3vw;
     }
   }
-  
+
   #habilities {
     grid-template-columns: repeat(6, 1fr);
     gap: 2vw;
@@ -72,7 +72,7 @@ mat-card-content {
       margin: 0;
     }
   }
-  
+
   mat-card-content {
     display: none;
   }

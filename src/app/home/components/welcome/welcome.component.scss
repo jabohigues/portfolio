@@ -1,5 +1,5 @@
 // Mobile
-#home {
+#divHome {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -17,21 +17,24 @@ p {
   padding: 0;
   margin: 0;
   opacity: 0;
-  
+
   &.first {
     width: 6ch;
-    animation: typing 1s steps(20) forwards, blink 0.5s infinite step-end alternate, fadeout 1s 1.5s forwards; // time delay
+    animation: typing 1s steps(20) forwards,
+      blink 0.5s infinite step-end alternate, fadeout 1s 1.5s forwards; // time delay
   }
 
   &.second {
     width: 15ch;
-    animation: typing 1.5s steps(25) 2s forwards, blink 0.5s infinite step-end alternate, fadeout 1.5s 3.2s forwards;
+    animation: typing 1.5s steps(25) 2s forwards,
+      blink 0.5s infinite step-end alternate, fadeout 1.5s 3.2s forwards;
   }
 
   &.third {
     width: 16ch;
     margin-bottom: 2vw;
-    animation: typing 1.5s steps(28) 3.5s forwards, blink 0.5s infinite step-end alternate;
+    animation: typing 1.5s steps(28) 3.5s forwards,
+      blink 0.5s infinite step-end alternate;
   }
 
   & .name {
@@ -42,29 +45,36 @@ p {
   }
 }
 
-#homedetails{
+#homedetails {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: left;
   flex-direction: row;
+}
 
-  img{
-    width: 7vw;
-    margin: 0;
-    padding: 0;
-    transition: all 0.3s;
-    
-    &:hover {
-      transition: all 0.3s;
-      transform: scale(1.2);
-    }
+// Align CV & SocialMedia
+@media only screen and (min-device-width: 400px) {
+  #homedetails {
+    align-items: center;
+  }
+}
+
+// Mobile - Web
+@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
+  #divHome {
+    width: 45vw !important;
+  }
+
+  p {
+    font-size: 5vw !important;
+    border-right: 0.15em solid;
   }
 }
 
 // Web
-@media only screen and (min-device-width: 500px) {
-  #home {
+@media only screen and (min-device-width: 900px) {
+  #divHome {
     width: 45vw !important;
   }
 
@@ -74,26 +84,21 @@ p {
 
     &.first {
       width: 6ch;
-      animation: typing 1s steps(20) forwards, blink 0.5s infinite step-end alternate, fadeout 1s 1.5s forwards; // time delay
+      animation: typing 1s steps(20) forwards,
+        blink 0.5s infinite step-end alternate, fadeout 1s 1.5s forwards; // time delay
     }
-  
+
     &.second {
       width: 15ch;
-      animation: typing 1.5s steps(25) 2s forwards, blink 0.5s infinite step-end alternate, fadeout 1.5s 3.2s forwards;
+      animation: typing 1.5s steps(25) 2s forwards,
+        blink 0.5s infinite step-end alternate, fadeout 1.5s 3.2s forwards;
     }
-  
+
     &.third {
       width: 16ch;
       margin-bottom: 2vw;
-      animation: typing 1.5s steps(28) 3.5s forwards, blink 0.5s infinite step-end alternate;
-    }
-  }
-
-  #homedetails {
-    align-items: center;
-
-    img {
-      width: 10vw !important;
+      animation: typing 1.5s steps(28) 3.5s forwards,
+        blink 0.5s infinite step-end alternate;
     }
   }
 }
@@ -103,7 +108,7 @@ p {
     width: 0;
   }
 
-  to{
+  to {
     opacity: 1;
   }
 }

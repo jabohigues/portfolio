@@ -1,4 +1,4 @@
-div{
+div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,35 +11,56 @@ p {
   font-size: 4vw;
   margin: 1vw 0;
 
-  span{
+  span {
     color: var(--yellow);
   }
- 
-  &:first-child{
+
+  &:first-child {
     margin-top: 5vw;
   }
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 5vw;
   }
 }
 
-// Web
-@media only screen and (min-device-width: 500px) {
-  div{
+// Mobile - Web
+@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
+  div {
     max-width: 30vw;
     padding: 1vw 2vw;
   }
-  
+
   p {
     font-size: 1.5vw;
     margin: 0.5vw 0;
-   
-    &:first-child{
+
+    &:first-child {
       margin-top: 2.5vw;
     }
-  
-    &:last-child{
+
+    &:last-child {
+      margin-bottom: 2.5vw;
+    }
+  }
+}
+
+// Web
+@media only screen and (min-device-width: 900px) {
+  div {
+    max-width: 30vw;
+    padding: 1vw 2vw;
+  }
+
+  p {
+    font-size: 1.5vw;
+    margin: 0.5vw 0;
+
+    &:first-child {
+      margin-top: 2.5vw;
+    }
+
+    &:last-child {
       margin-bottom: 2.5vw;
     }
   }

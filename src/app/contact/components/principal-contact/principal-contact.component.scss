@@ -13,7 +13,7 @@
     margin: 3vw auto;
   }
 
-  #fields{
+  #fields {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,14 +22,14 @@
     width: 100%;
 
     #first,
-    #second{
+    #second {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
 
-      textarea{
+      textarea {
         width: 100%;
         height: 8vw;
       }
@@ -64,7 +64,7 @@ button {
     border: 1px solid var(--green);
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       background-color: var(--yellow);
       border: 1px solid var(--yellow);
       color: var(--black);
@@ -144,25 +144,25 @@ button {
 }
 
 // Color of SnackBar
-::ng-deep .snackbarclass{
+::ng-deep .snackbarclass {
   background: var(--yellow);
   color: var(--black);
 }
 
 // Color of SnackBar's button
-::ng-deep .mat-button-wrapper{
+::ng-deep .mat-button-wrapper {
   color: var(--black);
 }
 
 // Web
-@media only screen and (min-device-width: 500px) {
+@media only screen and (min-device-width: 900px) {
   #formContact {
     display: block;
     width: 60vw;
     max-width: none;
     padding: 1vw;
     border-radius: 1vw;
-  
+
     h1 {
       text-align: center;
       font-size: 3vw;
@@ -170,7 +170,7 @@ button {
       margin-bottom: 3vw;
     }
 
-    #fields{
+    #fields {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -179,32 +179,32 @@ button {
       width: 100%;
 
       #first,
-      #second{
+      #second {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        textarea{
+        textarea {
           width: 100%;
           height: 8vw;
         }
       }
     }
   }
-  
+
   mat-form-field {
     font-size: 1.2vw !important;
     margin-bottom: 1vw;
   }
-  
+
   .icon {
     span {
       font-size: 1.2em;
     }
   }
-  
+
   //Button submit
   button {
     &.validForm {
@@ -212,7 +212,7 @@ button {
       font-size: 1.5vw;
       border-radius: 0.5vw;
     }
-  
+
     &.invalidForm {
       padding: 1vw 2vw;
       font-size: 1.5vw;
@@ -220,4 +220,3 @@ button {
     }
   }
 }
-

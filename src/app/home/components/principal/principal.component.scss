@@ -34,8 +34,6 @@ main {
   }
 }
 
-
-
 // Mobile
 @media only screen and (max-device-width: 500px) {
   #divBack.active {
@@ -51,13 +49,22 @@ main {
   }
 }
 
-
-// Web
+// Align CV & SocialMedia
 @media only screen and (min-device-width: 500px) {
   article {
     padding-top: 4vw !important;
     flex-direction: row !important;
     align-items: normal !important;
+
+    img {
+      width: 20vw !important;
+    }
+  }
+}
+// Web
+@media only screen and (min-device-width: 900px) {
+  article {
+    padding-top: 4vw !important;
 
     img {
       width: 20vw !important;

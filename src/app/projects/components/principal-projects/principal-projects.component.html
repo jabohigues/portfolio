@@ -2,43 +2,44 @@
   <h1>Proyectos</h1>
 
   <div id="projects">
-    <mat-card class="card" *ngFor="let project of projects">
-      <div class="imageCard">
-        <img
-          mat-card-image
-          src="/assets/images/projects/{{ project.folder }}/{{
-            project.img
-          }}.webp"
-          alt="{{ project.title }}"
-        />
-      </div>
-
+    <mat-card *ngFor="let project of projects">
+      <mat-card-header>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+        <mat-card-subtitle>{{ project.category }}</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="/assets/images/projects/{{ project.folder }}/{{
+          project.img
+        }}.webp"
+        alt="{{ project.title }}"
+        class="projectImage"
+      />
       <mat-card-content>
-        <div class="header">
-          <h2>{{ project.title }}</h2>
-          <mat-chip>{{ project.category }}</mat-chip>
-        </div>
-        <div class="description">
+        <div>
           <p>
             {{ project.description }}
           </p>
-          <p>
+          <p class="caller">
             {{ project.caller }}
           </p>
         </div>
-        <hr />
-        <p class="tags">
-          <img
-            *ngFor="let habilitie of project.tags"
-            src="/assets/images/habilities/{{ habilitie.img }}.svg"
-            alt="{{habilitie.title}}"
-          />
-        </p>
-        <p class="actions">
-          <a [href]="project.hrefs.github" target="_blank">GitHub</a>
-          <a [href]="project.hrefs.github" target="_blank">Proyecto</a>
-        </p>
+        <div>
+          <hr />
+          <p class="tags">
+            <img
+              mat-card-image
+              *ngFor="let habilitie of project.tags"
+              src="/assets/images/habilities/{{ habilitie.img }}.svg"
+              alt="{{ habilitie.title }}"
+            />
+          </p>
+        </div>
       </mat-card-content>
+      <mat-card-actions>
+        <a [href]="project.hrefs.github" target="_blank">GitHub</a>
+        <a [href]="project.hrefs.github" target="_blank">Proyecto</a>
+      </mat-card-actions>
     </mat-card>
   </div>
 </div>
