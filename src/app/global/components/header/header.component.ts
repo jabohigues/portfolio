@@ -10,7 +10,7 @@ import { GlobalVariables } from '../global.variables';
 export class HeaderComponent implements OnInit {
   hiddenWeb = GlobalVariables.hiddenWeb;
   hiddenMobile = GlobalVariables.hiddenMobile;
-  
+
   // Fixed menu on top when do scroll
   @HostListener('window:scroll', ['$event.target'])
   scroll(e: any) {

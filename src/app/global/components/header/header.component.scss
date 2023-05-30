@@ -25,90 +25,123 @@ header {
       transform: scale(1.2);
     }
   }
+
+  // button menu
+  #iconMenu {
+    width: 6vw;
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    background: transparent;
+    gap: 1vw;
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    div {
+      background: var(--white);
+      height: 2px;
+      width: 100%;
+      border-radius: 5px;
+      transition: all 0.5s;
+      transform-origin: left;
+    }
+
+    // change color of button menu
+    &.iconMenuScroll {
+      div {
+        background: var(--black);
+      }
+    }
+
+    // change burguer menu to X menu
+    &.active {
+      div:first-child {
+        transform: rotate(35deg);
+      }
+      div:nth-child(2) {
+        opacity: 0;
+      }
+      div:last-child {
+        transform: rotate(-35deg);
+      }
+    }
+  }
 }
 
-// Mobile
-@media only screen and (max-device-width: 500px) {
+// Móvil
+@media screen and (max-width: 480.5px) {
   .toolbarScroll {
     background-color: var(--yellow);
     color: var(--black);
     position: sticky;
     display: block;
   }
-
   .toolbar {
     min-height: 12vw;
+  }
+}
+
+// Móvil y tablet vertical
+@media screen and (min-width: 480.6px) and (max-width: 767.5px) {
+  .toolbar {
+    min-height: 6vw;
 
     // button menu
     #iconMenu {
-      width: 8vw;
-      display: flex;
-      flex-direction: column;
-      border: 0;
-      background: transparent;
-      gap: 2vw;
-      margin: 0;
-      padding: 0;
-
-      &:hover {
-        cursor: pointer;
+      width: 4vw;
+      gap: 1vw;
+    }
+  }
+  .toolbarScroll {
+    background-color: var(--yellow);
+    color: var(--black);
+    position: sticky;
+    display: block;
+  }
+  // button menu
+  #iconMenu {
+    // change burguer menu to X menu
+    &.active {
+      div:first-child {
+        transform: rotate(45deg) !important;
       }
-
-      div {
-        background: var(--white);
-        height: 2px;
-        width: 100%;
-        border-radius: 5px;
-        transition: all 0.5s;
-        transform-origin: left;
+      div:nth-child(2) {
+        opacity: 0;
       }
-
-      // change color of button menu
-      &.iconMenuScroll {
-        div {
-          background: var(--black);
-        }
-      }
-
-      // change burguer menu to X menu
-      &.active {
-        div:first-child {
-          transform: rotate(45deg);
-        }
-        div:nth-child(2) {
-          opacity: 0;
-        }
-        div:last-child {
-          transform: rotate(-45deg);
-        }
+      div:last-child {
+        transform: rotate(-45deg) !important;
       }
     }
   }
 }
 
-// Mobile - Web
-@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
+// Móvil y tablet horizontal
+@media screen and (min-width: 767.6px) and (max-width: 1023.5px) {
   .toolbar img {
     width: 5vw !important;
   }
 
   // button menu
   #iconMenu {
-    display: none;
+    display: none !important;
   }
 
   .toolbarScroll {
     backdrop-filter: blur(90px);
     color: var(--black);
-    display: block;
+    display: block !important;
   }
 }
 
-// Web
-@media only screen and (min-device-width: 900px) {
+// Escritorio and laptops
+@media screen and (min-width: 1023.6px) {
   // button menu
   #iconMenu {
-    display: none;
+    display: none !important;
   }
 
   .toolbarScroll {

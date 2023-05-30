@@ -1,6 +1,5 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { GlobalFunctions } from '../global.functions';
-import { GlobalVariables } from '../global.variables';
 
 @Component({
   selector: 'app-nav',
@@ -9,16 +8,21 @@ import { GlobalVariables } from '../global.variables';
 })
 export class NavComponent implements OnInit {
   @Input() hiddenNav: boolean = false;
-  
+
   //Activate link menu when do scroll
   @HostListener('window:scroll', []) onWindowScroll() {
     this.activateLinkInScroll();
   }
 
   constructor() {}
-  
+
   ngOnInit(): void {
     this.activateLinkInScroll();
+    if (this.hiddenNav) {
+      let nav = document.querySelectorAll('.nav:not(.hiddenNav)')[0];
+      nav.classList.toggle('active');
+      nav.classList.toggle('notactive');
+    }
   }
 
   // Show or hide nav and divBack

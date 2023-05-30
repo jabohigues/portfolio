@@ -6,34 +6,51 @@
   color: var(--yellow);
 }
 
-#separatordiv {
-  display: flex;
-  align-items: center;
-}
+nav {
+  &.normal {
+    opacity: 0;
+    z-index: -1;
+  }
 
-.navContent {
-  color: var(--white);
+  &.active {
+    opacity: 1;
+    z-index: 3;
+    animation: fadein 0.2s ease-in, appear 0.3s ease-in;
+  }
 
-  ul {
-    list-style: none;
-    padding: 0;
+  &.notactive {
+    animation: desappear 0.3s ease-out, desappearZIndex 0.3s ease-out;
+  }
 
-    li {
-      margin: 4vw 0;
+  #separatordiv {
+    display: flex;
+    align-items: center;
+  }
 
-      &:hover {
-        color: var(--green);
-        cursor: pointer;
+  .navContent {
+    color: var(--white);
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 4vw 0;
+
+        &:hover {
+          color: var(--green);
+          cursor: pointer;
+        }
       }
     }
-  }
-  img {
-    width: 20vw;
+    img {
+      width: 20vw;
+    }
   }
 }
 
 // Mobile
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-device-width: 767.5px) {
   nav {
     position: fixed;
     left: 0;
@@ -44,22 +61,12 @@
     align-items: center;
     padding: 3vw 5vw;
     width: 50vw;
-    border-radius: 0 2vw 2vw 0;
+    border-radius: 0 3vw 3vw 0;
     background-color: var(--black);
+    overflow: scroll;
 
-    &.normal {
-      opacity: 0;
-      z-index: -1;
-    }
-
-    &.active {
-      opacity: 1;
-      z-index: 3;
-      animation: fadein 0.2s ease-in, appear 0.3s ease-in;
-    }
-
-    &.notactive {
-      animation: desappear 0.3s ease-out, desappearZIndex 0.3s ease-out;
+    &::-webkit-scrollbar {
+      display: none;
     }
 
     #separatordiv {
@@ -72,13 +79,6 @@
       align-items: center;
       flex-direction: column;
       margin: 12vw 0;
-
-      li {
-        margin: 4vw 0;
-      }
-      img {
-        width: 20vw;
-      }
     }
   }
 
@@ -88,10 +88,31 @@
   }
 }
 
-// Mobile - Web
-@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
+// Móvil y tablet vertical
+@media screen and (min-width: 481px) and (max-width: 767.5px) {
   nav {
-    display: flex;
+    #separatordiv {
+      margin-bottom: 5vw;
+    }
+    .navContent {
+      font-size: 4vw;
+      margin-bottom: 2vw;
+      li {
+        margin: 2.5vw 0 !important;
+      }
+    }
+  }
+
+  #divbuttoncv {
+    margin-bottom: 3vw;
+    font-size: 3vw;
+  }
+}
+
+// Móvil y tablet horizontal
+@media screen and (min-width: 767.6px) and (max-width: 1023.5px) {
+  nav {
+    display: block;
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -129,8 +150,8 @@
   }
 }
 
-// Web
-@media only screen and (min-device-width: 900px) {
+// Escritorio and laptops
+@media screen and (min-width: 1023.6px) {
   nav {
     display: flex;
     justify-content: center;
