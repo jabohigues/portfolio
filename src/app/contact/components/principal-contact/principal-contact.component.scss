@@ -18,28 +18,25 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2vw;
-    width: 100%;
 
     #first,
     #second {
-      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
 
       textarea {
-        width: 100%;
-        height: 8vw;
+        height: 15vw;
       }
     }
   }
 }
 
 mat-form-field {
-  width: 80%;
+  width: 50vw;
   margin-bottom: 2vw;
+  font-size: 3.5vw;
 }
 
 .icon {
@@ -48,36 +45,109 @@ mat-form-field {
   align-content: center;
   span {
     font-size: 5vw;
+    padding-left: 1vw;
   }
 }
 
 //Button submit
 button {
   margin-bottom: 2vw;
+  border-radius: 1vw;
+  padding: 2vw 4vw;
+  font-size: 4vw;
+  transition: all 0.3s;
 
   &.validForm {
-    background-color: var(--green);
     color: var(--white);
-    padding: 2vw 4vw;
-    font-size: 4vw;
-    border-radius: 2vw;
     border: 1px solid var(--green);
+    background-color: var(--green);
     cursor: pointer;
 
     &:hover {
-      background-color: var(--yellow);
-      border: 1px solid var(--yellow);
       color: var(--black);
+      border: 1px solid var(--yellow);
+      background-color: var(--yellow);
+      transition: all 0.3s;
     }
   }
 
   &.invalidForm {
-    background-color: var(--grey);
     color: var(--white);
-    padding: 2vw 4vw;
-    font-size: 4vw;
-    border-radius: 2vw;
     border: 1px solid var(--grey);
+    background-color: var(--grey);
+  }
+}
+
+// Móvil y tablet vertical
+@media screen and (min-width: 481px) and (max-width: 767.5px) {
+  mat-form-field {
+    margin-bottom: 0 !important;
+    font-size: 3vw;
+  }
+
+  //Button submit
+  button {
+    margin-top: 4vw;
+  }
+}
+
+// Móvil y tablet horizontal
+@media screen and (min-width: 767.6px) {
+  #formContact {
+    display: block;
+    width: 60vw;
+    max-width: none;
+    padding: 1vw;
+    border-radius: 1vw;
+
+    h1 {
+      text-align: center;
+      font-size: 3vw;
+      margin: 1vw;
+      margin-bottom: 3vw;
+    }
+
+    #fields {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 2vw;
+      width: 100%;
+
+      #first,
+      #second {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        textarea {
+          width: 100%;
+          height: 8vw;
+        }
+      }
+    }
+  }
+
+  mat-form-field {
+    font-size: 1.2vw !important;
+    margin-bottom: 1vw;
+    width: 25vw;
+  }
+
+  .icon {
+    span {
+      font-size: 1.2em;
+    }
+  }
+
+  //Button submit
+  button {
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    border-radius: 0.5vw;
   }
 }
 
@@ -151,72 +221,102 @@ button {
 
 // Color of SnackBar's button
 ::ng-deep .mat-button-wrapper {
+  font-size: 3.5vw;
   color: var(--black);
 }
 
-// Web
-@media only screen and (min-device-width: 900px) {
-  #formContact {
-    display: block;
-    width: 60vw;
-    max-width: none;
-    padding: 1vw;
-    border-radius: 1vw;
+// Size of SnackBar's text
+::ng-deep .mat-simple-snack-bar-content {
+  font-size: 4vw !important;
+}
 
-    h1 {
-      text-align: center;
-      font-size: 3vw;
-      margin: 1vw;
-      margin-bottom: 3vw;
-    }
-
-    #fields {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      gap: 2vw;
-      width: 100%;
-
-      #first,
-      #second {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        textarea {
-          width: 100%;
-          height: 8vw;
-        }
-      }
-    }
+@media screen and (min-width: 475px) and (max-width: 535.5px) {
+  // Color of SnackBar's button
+  ::ng-deep .mat-button-wrapper {
+    font-size: 2.5vw;
+    color: var(--black);
   }
 
-  mat-form-field {
-    font-size: 1.2vw !important;
-    margin-bottom: 1vw;
+  // Size of SnackBar's text
+  ::ng-deep .mat-simple-snack-bar-content {
+    font-size: 3vw !important;
+  }
+}
+
+@media screen and (min-width: 535.6px) and (max-width: 647.5px) {
+  // Color of SnackBar's button
+  ::ng-deep .mat-button-wrapper {
+    font-size: 2vw;
+    color: var(--black);
   }
 
-  .icon {
-    span {
-      font-size: 1.2em;
-    }
+  // Size of SnackBar's text
+  ::ng-deep .mat-simple-snack-bar-content {
+    font-size: 2.5vw !important;
+  }
+}
+
+@media screen and (min-width: 647.6px) and (max-width: 706.5px) {
+  // Color of SnackBar's button
+  ::ng-deep .mat-button-wrapper {
+    font-size: 1.75vw;
+    color: var(--black);
   }
 
-  //Button submit
-  button {
-    &.validForm {
-      padding: 1vw 2vw;
-      font-size: 1.5vw;
-      border-radius: 0.5vw;
-    }
+  // Size of SnackBar's text
+  ::ng-deep .mat-simple-snack-bar-content {
+    font-size: 2.25vw !important;
+  }
+}
 
-    &.invalidForm {
-      padding: 1vw 2vw;
-      font-size: 1.5vw;
-      border-radius: 0.5vw;
-    }
+@media screen and (min-width: 706.6px) and (max-width: 816.5px) {
+  // Color of SnackBar's button
+  ::ng-deep .mat-button-wrapper {
+    font-size: 1.5vw;
+    color: var(--black);
+  }
+
+  // Size of SnackBar's text
+  ::ng-deep .mat-simple-snack-bar-content {
+    font-size: 2vw !important;
+  }
+}
+
+@media screen and (min-width: 816.6px) and (max-width: 940.5px) {
+  // Color of SnackBar's button
+  ::ng-deep .mat-button-wrapper {
+    font-size: 1.25vw;
+    color: var(--black);
+  }
+
+  // Size of SnackBar's text
+  ::ng-deep .mat-simple-snack-bar-content {
+    font-size: 1.75vw !important;
+  }
+}
+
+@media screen and (min-width: 940.6px) and (max-width: 1023.5px) {
+  // Color of SnackBar's button
+  ::ng-deep .mat-button-wrapper {
+    font-size: 1.25vw;
+    color: var(--black);
+  }
+
+  // Size of SnackBar's text
+  ::ng-deep .mat-simple-snack-bar-content {
+    font-size: 1.5vw !important;
+  }
+}
+
+@media screen and (min-width: 1023.6px) {
+  // Color of SnackBar's button
+  ::ng-deep .mat-button-wrapper {
+    font-size: 1vw;
+    color: var(--black);
+  }
+
+  // Size of SnackBar's text
+  ::ng-deep .mat-simple-snack-bar-content {
+    font-size: 1.25vw !important;
   }
 }

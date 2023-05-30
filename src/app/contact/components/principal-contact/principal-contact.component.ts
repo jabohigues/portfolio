@@ -23,7 +23,11 @@ export class PrincipalContactComponent implements OnInit {
     message: false,
   };
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private _snackBar: MatSnackBar) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private _snackBar: MatSnackBar
+  ) {
     this.contactForm = this.formBuilder.group({
       name: ['', Validators.required],
       phone: [],
@@ -34,37 +38,39 @@ export class PrincipalContactComponent implements OnInit {
 
   ngOnInit() {}
 
-  customEmailValidator(control: AbstractControl){
+  customEmailValidator(control: AbstractControl) {
     const email = control.value as string;
-    
-    if (email){
+
+    if (email) {
       const atIndex = email.indexOf('@');
       const dotIndex = email.lastIndexOf('.');
-      return (atIndex > 0 && dotIndex > atIndex && dotIndex < email.length - 2) ? null : { email: true };
+      return atIndex > 0 && dotIndex > atIndex && dotIndex < email.length - 2
+        ? null
+        : { email: true };
     }
     return null;
   }
 
   checkIsCorrect(input: string) {
-    this.isValid[input] = this.contactForm.controls[input].valid
+    this.isValid[input] = this.contactForm.controls[input].valid;
   }
 
-  submitForm(formDirective: FormGroupDirective){
+  submitForm(formDirective: FormGroupDirective) {
     if (this.contactForm.invalid) {
       return;
     }
-  
+
     const formData = new FormData();
     formData.append('Name', this.contactForm.value.name);
     formData.append('Email', this.contactForm.value.email);
     formData.append('Phone', this.contactForm.value.phone);
     formData.append('Message', this.contactForm.value.message);
 
-    this.http.post('https://formspree.io/f/xbjebnzy', formData) .subscribe({
+    this.http.post('https://formspree.io/f/xbjebnzy', formData).subscribe({
       next: () => {
         // Lógica adicional después de enviar el formulario
         // por ejemplo, mostrar un mensaje de éxito al usuario
-        this._snackBar.open("El correo se ha enviado con éxito", "Gracias", {
+        this._snackBar.open('El correo se ha enviado con éxito', 'Gracias', {
           duration: 3000,
           horizontalPosition: 'left',
           panelClass: 'snackbarclass',
@@ -74,20 +80,20 @@ export class PrincipalContactComponent implements OnInit {
         this.startConfetti();
 
         formDirective.resetForm();
-        Object.keys(this.contactForm.controls).forEach(key => {
+        Object.keys(this.contactForm.controls).forEach((key) => {
           this.checkIsCorrect(key);
         });
       },
       error: (e) => {
         console.log(e);
         let messageError = e.error.errors[0].message;
-        this._snackBar.open(messageError, "Error", {
+        this._snackBar.open(messageError, 'Error', {
           duration: 3000,
           horizontalPosition: 'center',
           panelClass: 'snackbarclass',
           verticalPosition: 'bottom',
         });
-      }
+      },
     });
   }
 
@@ -99,8 +105,7 @@ export class PrincipalContactComponent implements OnInit {
       shapes: ['square'],
       particleCount: 150,
       spread: 100,
-      origin: { x: 0.5, y: 0.8 }
+      origin: { x: 0.5, y: 0.8 },
     });
   }
-  
 }
