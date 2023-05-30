@@ -132,7 +132,7 @@ mat-card {
 }
 
 // 400 - 500
-@media only screen and (min-device-width: 400px) and (max-device-width: 500px) {
+@media only screen and (min-device-width: 400px) and (max-device-width: 500.5px) {
   #divProjects {
     margin: auto 7vw;
   }
@@ -169,7 +169,7 @@ mat-card {
 }
 
 // 500 - 600
-@media only screen and (min-device-width: 500px) and (max-device-width: 600px) {
+@media only screen and (min-device-width: 500.6px) and (max-device-width: 600.5px) {
   #divProjects {
     margin: auto 20vw;
     h1 {
@@ -216,15 +216,15 @@ mat-card {
 }
 
 // 600 - 800
-@media only screen and (min-device-width: 600px) and (max-device-width: 800px) {
+@media only screen and (min-device-width: 600.6px) and (max-device-width: 767.5px) {
   #divProjects {
-    margin: auto 10vw;
+    margin: auto 20vw;
     h1 {
-      font-size: 4vw;
-      margin-bottom: 2.5vw;
+      font-size: 6vw;
+      margin-bottom: 3vw;
     }
     #projects {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       gap: 5vw;
     }
   }
@@ -233,14 +233,14 @@ mat-card {
     border-radius: 1vw !important;
 
     mat-card-title {
-      font-size: 2.25vw !important;
+      font-size: 3.5vw !important;
     }
 
     mat-card-subtitle {
-      padding: 0.5vw 1vw;
+      padding: 0.75vw 1.5vw;
       border-radius: 0.5vw;
       margin-bottom: 0.5vw;
-      font-size: 1.5vw;
+      font-size: 2vw;
     }
 
     .projectImage {
@@ -248,14 +248,14 @@ mat-card {
     }
 
     mat-card-content {
-      margin-bottom: 1vw;
+      margin-bottom: 3vw;
       padding: 0 0.5vw;
 
       p {
-        font-size: 1.5vw;
+        font-size: 2.25vw;
         &.tags {
           img {
-            width: 4vw;
+            width: 7vw;
           }
         }
       }
@@ -264,8 +264,8 @@ mat-card {
     mat-card-actions {
       gap: 2vw;
       a {
-        width: 8.5vw;
-        font-size: 1.5vw;
+        width: 16vw;
+        font-size: 2.25vw;
         padding: 0.5vw 1vw;
         border-radius: 0.5vw;
       }
@@ -274,7 +274,7 @@ mat-card {
 }
 
 // >800
-@media only screen and (min-device-width: 800px) {
+@media only screen and (min-device-width: 767.6px) {
   #divProjects {
     margin: auto 18vw;
     h1 {
@@ -296,8 +296,8 @@ mat-card {
     }
 
     mat-card-subtitle {
-      padding: 0.25vw 0.5vw;
-      border-radius: 0.3vw;
+      padding: 0.5vw 1vw;
+      border-radius: 0.5vw;
       margin-bottom: 0.5vw;
       font-size: 1.25vw;
     }
