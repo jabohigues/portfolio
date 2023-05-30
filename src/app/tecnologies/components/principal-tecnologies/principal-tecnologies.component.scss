@@ -55,7 +55,7 @@ mat-card-content {
 }
 
 // Web
-@media only screen and (min-device-width: 900px) {
+@media only screen and (min-device-width: 767.6px) {
   #divTecnologies {
     h1 {
       font-size: 3vw;
@@ -64,16 +64,23 @@ mat-card-content {
 
   #tecnologies {
     grid-template-columns: repeat(6, 1fr);
-    gap: 2vw;
+    gap: 0 !important;
 
     img {
       max-width: none;
-      width: 5vw;
+      width: 6vw !important;
       margin: 0;
     }
   }
 
   mat-card-content {
     display: none;
+  }
+}
+
+// Web
+@media only screen and (min-device-width: 1023px) {
+  #tecnologies {
+    gap: 2vw !important;
   }
 }
