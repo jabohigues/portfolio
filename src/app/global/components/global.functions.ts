@@ -45,8 +45,8 @@ export class GlobalFunctions {
     divBack!.classList.toggle('active');
 
     let nav = document.querySelectorAll('.nav:not(.hiddenNav)')[0];
-    nav!.classList.toggle('active');
-    nav!.classList.toggle('notactive');
+    nav.classList.toggle('active');
+    nav.classList.toggle('notactive');
 
     let iconMenu = document.getElementById('iconMenu');
     iconMenu!.classList.toggle('active');
@@ -71,7 +71,7 @@ export class GlobalFunctions {
         if (GlobalVariables.firstClickLink && scrollY <= 10) {
           GlobalVariables.firstClickLink = !GlobalVariables.firstClickLink;
           this.scrollIfFormContact(href, top);
-        } else {          
+        } else {
           href != 'formContact'
             ? window.scrollTo({ top: top - 50, behavior: 'smooth' })
             : window.scrollTo({ top: top - 70, behavior: 'smooth' });

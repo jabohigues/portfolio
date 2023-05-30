@@ -60,8 +60,16 @@ p {
   }
 }
 
-// Mobile - Web
-@media only screen and (min-device-width: 500px) and (max-device-width: 900px) {
+// Móvil y tablet vertical
+@media screen and (min-width: 481px) and (max-width: 767.5px) {
+  p {
+    font-size: 8vw !important;
+    border-right: 0.15em solid;
+  }
+}
+
+// Móvil y tablet horizontal
+@media screen and (min-width: 767.6px) {
   #divHome {
     width: 45vw !important;
   }
@@ -72,8 +80,8 @@ p {
   }
 }
 
-// Web
-@media only screen and (min-device-width: 900px) {
+// Escritorio and laptops
+@media screen and (min-width: 1024px) {
   #divHome {
     width: 45vw !important;
   }

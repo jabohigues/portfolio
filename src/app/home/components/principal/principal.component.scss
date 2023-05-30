@@ -34,25 +34,10 @@ main {
   }
 }
 
-// Mobile
-@media only screen and (max-device-width: 500px) {
-  #divBack.active {
-    display: block;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    opacity: 0.5;
-  }
-}
-
-// Align CV & SocialMedia
-@media only screen and (min-device-width: 500px) {
+// Móvil y tablet horizontal
+@media screen and (min-width: 767.6px) {
   article {
-    padding-top: 4vw !important;
+    padding-top: 5vw !important;
     flex-direction: row !important;
     align-items: normal !important;
 
@@ -61,13 +46,10 @@ main {
     }
   }
 }
-// Web
-@media only screen and (min-device-width: 900px) {
-  article {
-    padding-top: 4vw !important;
 
-    img {
-      width: 20vw !important;
-    }
+// Escritorio and laptops
+@media screen and (min-width: 1024px) {
+  article {
+    padding-top: 3vw !important;
   }
 }

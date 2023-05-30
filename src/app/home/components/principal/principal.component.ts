@@ -9,9 +9,9 @@ import { GlobalVariables } from 'src/app/global/components/global.variables';
 export class PrincipalComponent implements OnInit {
   hiddenWeb = GlobalVariables.hiddenWeb;
   hiddenMobile = GlobalVariables.hiddenMobile;
-  
+
   @HostListener('window:resize', []) onWindowResize() {
-    this.getScreenSize()
+    this.getScreenSize();
   }
 
   constructor() {}
@@ -20,8 +20,8 @@ export class PrincipalComponent implements OnInit {
     this.getScreenSize();
   }
 
-  getScreenSize(){
-    if (screen.width >= 500) {
+  getScreenSize() {
+    if (screen.width >= 768) {
       GlobalVariables.hiddenWeb.isweb = true;
       GlobalVariables.hiddenWeb.hidden = false;
       GlobalVariables.hiddenMobile.ismobile = false;
@@ -40,8 +40,8 @@ export class PrincipalComponent implements OnInit {
     divBack!.classList.toggle('active');
 
     let nav = document.querySelectorAll('.nav:not(.hiddenNav)')[0];
-    nav!.classList.toggle('active');
-    nav!.classList.toggle('notactive');
+    nav.classList.toggle('active');
+    nav.classList.toggle('notactive');
 
     let iconMenu = document.getElementById('iconMenu');
     iconMenu!.classList.toggle('active');
