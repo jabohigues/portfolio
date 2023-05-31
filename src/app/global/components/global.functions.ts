@@ -60,6 +60,38 @@ export class GlobalFunctions {
 
   // Do the scroll into the view
   public static scrollIntoPage(href: string) {
+    GlobalVariables.hiddenWeb.isweb
+      ? this.scrollWeb(href)
+      : this.scrollMobile(href);
+  }
+
+  // Special scroll if is formcontact
+  public static scrollIfFormContact(href: string, top: number) {
+    href != 'formContact'
+      ? window.scrollTo({ top: top + 10, behavior: 'smooth' })
+      : window.scrollTo({ top: top - 5, behavior: 'smooth' });
+  }
+
+  // Scroll if is web
+  public static scrollWeb(href: string) {
+    let div = document.getElementById(href);
+
+    if (href == 'divProjects') {
+      let top = div!.offsetTop;
+      window.scrollTo({ top: top - 40, behavior: 'smooth' });
+    } else {
+      div?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }
+
+    if (GlobalVariables.menuActive) this.toggleMenu();
+    this.linkMenuActive(href);
+  }
+
+  // Scroll if is mobile
+  public static scrollMobile(href: string) {
     let div = document.getElementById(href);
     let top = div!.offsetTop;
 
@@ -81,11 +113,5 @@ export class GlobalFunctions {
 
     if (GlobalVariables.menuActive) this.toggleMenu();
     this.linkMenuActive(href);
-  }
-
-  public static scrollIfFormContact(href: string, top: number) {
-    href != 'formContact'
-      ? window.scrollTo({ top: top + 10, behavior: 'smooth' })
-      : window.scrollTo({ top: top - 5, behavior: 'smooth' });
   }
 }

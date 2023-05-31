@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalFunctions } from '../global.functions';
 
 @Component({
   selector: 'app-button-to-top',
@@ -10,7 +11,8 @@ export class ButtonToTopComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Do the scroll into the view
+  scrollIntoPage(href: string) {
+    GlobalFunctions.scrollIntoPage(href);
   }
 }
