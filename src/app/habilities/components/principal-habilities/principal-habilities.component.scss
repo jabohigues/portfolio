@@ -48,9 +48,12 @@ mat-card-content {
 }
 
 // Mobile
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-device-width: 767.5px) {
   .imageCard {
     min-height: 20vw;
+  }
+  ::ng-deep .mat-tooltip {
+    display: none !important;
   }
 }
 
@@ -76,11 +79,21 @@ mat-card-content {
   mat-card-content {
     display: none;
   }
+
+  ::ng-deep .mat-tooltip {
+    display: block !important;
+    font-size: 1vw;
+  }
 }
 
 // Web
 @media only screen and (min-device-width: 1023px) {
   #habilities {
     gap: 2vw !important;
+  }
+
+  ::ng-deep .mat-tooltip {
+    display: block !important;
+    font-size: 1vw;
   }
 }
