@@ -28,7 +28,8 @@ nav {
   }
 
   .navContent {
-    color: var(--white);
+    color: var(--grey);
+    text-transform: uppercase;
 
     ul {
       list-style: none;
@@ -36,10 +37,30 @@ nav {
 
       li {
         margin: 4vw 0;
+        transition: all 0.3s;
 
         &:hover {
-          color: var(--green);
+          color: var(--white);
+          transition: all 0.3s;
           cursor: pointer;
+
+          &:before,
+          &:after {
+            opacity: 1;
+            color: var(--yellow);
+            transition: all 0.3s;
+          }
+        }
+
+        &:before {
+          content: "< ";
+          opacity: 0;
+          transition: all 0.3s;
+        }
+        &:after {
+          content: " >";
+          opacity: 0;
+          transition: all 0.3s;
         }
       }
     }
@@ -122,7 +143,7 @@ nav {
     }
 
     .navContent {
-      font-size: 1.6vw !important;
+      font-size: 1.2vw !important;
 
       ul {
         display: flex;
@@ -130,14 +151,10 @@ nav {
         flex-direction: row;
 
         li {
-          margin: 0 1vw;
+          margin: 0;
 
           &:last-child {
             margin-right: 1.5vw !important;
-          }
-
-          &:hover {
-            color: var(--grey);
           }
         }
       }
@@ -171,14 +188,10 @@ nav {
         flex-direction: row;
 
         li {
-          margin: 0 1vw;
+          margin: 0 0.2vw;
 
           &:last-child {
-            margin-right: 3vw;
-          }
-
-          &:hover {
-            color: var(--grey);
+            margin-right: 1vw;
           }
         }
       }
