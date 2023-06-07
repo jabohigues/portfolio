@@ -9,9 +9,7 @@
       </mat-card-header>
       <img
         mat-card-image
-        src="/assets/images/projects/{{ project.folder }}/{{
-          project.img
-        }}.webp"
+        src="assets/images/projects/{{ project.folder }}/{{ project.img }}.webp"
         alt="{{ project.title }}"
         class="projectImage"
       />
@@ -30,7 +28,7 @@
             <img
               mat-card-image
               *ngFor="let habilitie of project.tags"
-              src="/assets/images/habilities/{{ habilitie.img }}.svg"
+              src="assets/images/habilities/{{ habilitie.img }}.svg"
               alt="{{ habilitie.title }}"
             />
           </p>
